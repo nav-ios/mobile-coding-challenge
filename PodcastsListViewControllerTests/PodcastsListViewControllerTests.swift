@@ -45,20 +45,44 @@ final class PodcastFeediOSTests: XCTestCase {
         sut.loadViewIfNeeded()
         XCTAssertEqual(sut.numberOfLoadedCells(), 0)
         XCTAssertEqual(sut.refreshControl?.isRefreshing, true)
-        let podcast1 = makePodcast()
-        let podcast2 = makePodcast()
+        let podcast1 = makePodcast(title: "Some title", description: "Some description")
+        let podcast2 = makePodcast(title: "Some title", description: "Some description 2")
         loader.completeLoading([podcast1, podcast2])
         XCTAssertEqual(sut.numberOfLoadedCells(), 2)
         XCTAssertEqual(sut.refreshControl?.isRefreshing, false)
     }
+    
+    func test_viewDidLoad_showsCellsWithCorrectDataOnSuccesfulCompletion(){
+        let (sut, loader) = makeSUT()
+        sut.loadViewIfNeeded()
+        XCTAssertEqual(sut.numberOfLoadedCells(), 0)
+        XCTAssertEqual(sut.refreshControl?.isRefreshing, true)
+        
+        let podcast1 = makePodcast(title: "Title 1", description: "Description 1")
+        let podcast2 = makePodcast(title: "Title 2", description: "Description 2")
+        
+        loader.completeLoading([podcast1, podcast2])
+        XCTAssertEqual(sut.numberOfLoadedCells(), 2)
+        XCTAssertEqual(sut.refreshControl?.isRefreshing, false)
+        
+        let cell1 = sut.podcastView(at: 0)
+        let cell2 = sut.podcastView(at: 1)
+        
+        XCTAssertEqual(cell1?.title, podcast1.title)
+        XCTAssertEqual(cell1?.description, podcast1.description)
+        
+        XCTAssertEqual(cell2?.title, podcast2.title)
+        XCTAssertEqual(cell2?.description, podcast2.description)
+    }
+    
     func makeSUT() -> (PodcastsListViewController, LoaderSpy){
         let loader = LoaderSpy()
         let sut = PodcastsListViewController(loader: loader)
         return (sut, loader)
     }
     
-    func makePodcast() -> Podcast{
-        Podcast(title: "Some title", description: "some description", id: UUID().uuidString, imageURL: anyURL(), thumbnailURL: anyURL(), publisher: "Some publisher")
+    func makePodcast(title: String, description: String) -> Podcast{
+        Podcast(title: title, description: description, id: UUID().uuidString, imageURL: anyURL(), thumbnailURL: anyURL(), publisher: "Some publisher")
     }
     
     private func anyURL() -> URL{
@@ -87,5 +111,23 @@ final class PodcastFeediOSTests: XCTestCase {
 private extension PodcastsListViewController{
     func numberOfLoadedCells() -> Int{
         tableView.numberOfRows(inSection: 0)
+    }
+    
+    func podcastView(at row: Int) -> PodcastCell?{
+        let ds = tableView.dataSource
+        let indexPath = IndexPath(row: row, section: 0)
+        return ds?.tableView(tableView, cellForRowAt: indexPath) as? PodcastCell
+    }
+}
+
+private extension PodcastCell{
+    var title: String?{
+        return labelTitle.text
+    }
+    var descriptionString: String?{
+        return labelDescription.text
+    }
+    var isFavouritHidden: Bool{
+        return !labelFavorite.isHidden
     }
 }

@@ -39,6 +39,9 @@ class PodcastsListViewController: UITableViewController{
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = PodcastCell()
+        let model = arrayTable[indexPath.row]
+        cell.labelTitle.text = model.title
+        cell.labelDescription.text = model.description
         return cell
     }
 }

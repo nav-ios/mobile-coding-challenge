@@ -9,6 +9,9 @@ import UIKit
 
 class PodcastCell: UITableViewCell {
 
+    let labelDescription = UILabel()
+    let labelTitle = UILabel()
+    let labelFavorite = UILabel()
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
