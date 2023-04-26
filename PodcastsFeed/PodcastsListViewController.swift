@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PodcastsListViewController: UIViewController{
+class PodcastsListViewController: UITableViewController{
     private var loader: PodcastLoader?
     
    convenience init(loader: PodcastLoader){
@@ -16,6 +16,10 @@ class PodcastsListViewController: UIViewController{
     }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        refreshControl = UIRefreshControl()
+        
+        refreshControl?.beginRefreshing()
         loader?.load(completion: { result in
             
         })
