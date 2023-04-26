@@ -35,15 +35,34 @@ final class PodcastFeediOSTests: XCTestCase {
         let (sut, loader) = makeSUT()
         sut.loadViewIfNeeded()
         XCTAssertEqual(sut.refreshControl?.isRefreshing, true)
-        loader.completeLoading()
+        loader.completeLoading([])
         XCTAssertEqual(sut.refreshControl?.isRefreshing, false)
     }
     
     
+    func test_viewDidLoad_showsLoadedItemsOnTableViewOnSuccess(){
+        let (sut, loader) = makeSUT()
+        sut.loadViewIfNeeded()
+        XCTAssertEqual(sut.numberOfLoadedCells(), 0)
+        XCTAssertEqual(sut.refreshControl?.isRefreshing, true)
+        let podcast1 = makePodcast()
+        let podcast2 = makePodcast()
+        loader.completeLoading([podcast1, podcast2])
+        XCTAssertEqual(sut.numberOfLoadedCells(), 2)
+        XCTAssertEqual(sut.refreshControl?.isRefreshing, false)
+    }
     func makeSUT() -> (PodcastsListViewController, LoaderSpy){
         let loader = LoaderSpy()
         let sut = PodcastsListViewController(loader: loader)
         return (sut, loader)
+    }
+    
+    func makePodcast() -> Podcast{
+        Podcast(title: "Some title", description: "some description", id: UUID().uuidString, imageURL: anyURL(), thumbnailURL: anyURL(), publisher: "Some publisher")
+    }
+    
+    private func anyURL() -> URL{
+        URL(string: "http://any-podcast-url.com")!
     }
     
     class LoaderSpy: PodcastLoader{
@@ -54,8 +73,8 @@ final class PodcastFeediOSTests: XCTestCase {
             arrayCompletions.append(completion)
         }
         
-        func completeLoading(at index: Int = 0){
-            arrayCompletions[index](.success([]))
+        func completeLoading(_ podcasts: [Podcast], at index: Int = 0){
+            arrayCompletions[index](.success(podcasts))
         }
         
         var loadCallCount = 0
@@ -64,4 +83,9 @@ final class PodcastFeediOSTests: XCTestCase {
     
 
    
+}
+private extension PodcastsListViewController{
+    func numberOfLoadedCells() -> Int{
+        tableView.numberOfRows(inSection: 0)
+    }
 }
