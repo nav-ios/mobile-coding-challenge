@@ -20,8 +20,8 @@ class PodcastsListViewController: UITableViewController{
         refreshControl = UIRefreshControl()
         
         refreshControl?.beginRefreshing()
-        loader?.load(completion: { result in
-            
+        loader?.load(completion: { [weak self] result in
+            self?.refreshControl?.endRefreshing()
         })
     }
 }

@@ -30,19 +30,38 @@ final class PodcastFeediOSTests: XCTestCase {
         XCTAssertEqual(sut.refreshControl?.isRefreshing, true)
     }
     
+      
+    func test_viewDidLoad_hidesLoadingIndicatorWhenLoadCompletes(){
+        let (sut, loader) = makeSUT()
+        sut.loadViewIfNeeded()
+        XCTAssertEqual(sut.refreshControl?.isRefreshing, true)
+        loader.completeLoading()
+        XCTAssertEqual(sut.refreshControl?.isRefreshing, false)
+    }
+    
     
     func makeSUT() -> (PodcastsListViewController, LoaderSpy){
         let loader = LoaderSpy()
         let sut = PodcastsListViewController(loader: loader)
         return (sut, loader)
     }
+    
     class LoaderSpy: PodcastLoader{
+        var arrayCompletions = [(PodcastLoaderResult) -> Void]()
+        
         func load(completion: @escaping (PodcastLoaderResult) -> Void) {
             loadCallCount += 1
+            arrayCompletions.append(completion)
+        }
+        
+        func completeLoading(at index: Int = 0){
+            arrayCompletions[index](.success([]))
         }
         
         var loadCallCount = 0
         
     }
+    
+
    
 }
