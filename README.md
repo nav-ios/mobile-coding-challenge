@@ -1,5 +1,19 @@
 # Mobile Developer Coding Challenge
 
+### TDD Flow:
+```
+User launches app -> Expects to see latest podcasts fetched from internet
+App makes a request to the backend -> If response is succeess -> Decodes data -> Displays to user
+-> If request is not succesful -> Shows an error message
+```
+
+## Testing Pointer #1:
+- ✅ Assert that `PodcastLoader` doesn't make a request to client on init
+- ✅ Assert that `PodcastLoader` only makes request to client on `load` invocation
+- ✅ Assert that `PodcastLoader` fails with same errors as client
+- ✅ Assert that `PodcastLoader` can map data from client to correct `Podcast` objects from dummy JSON file
+- ✅ Assert that `PodcastLoaderAPI` can fetch data from backend server and process it to display to user
+
 Please read the instructions below carefully before starting the coding challenge.
 
 Once submitted, the mobile team will review your work and get back to you as soon as possible.
@@ -30,8 +44,8 @@ You will be building a simple two-screen podcasts app. A basic mockup is provide
 - [ ] Fork this repo and keep it public until we've been able to review it.
 - [ ] Can be written in either Java or Kotlin for Android applicants, and Objective-C or Swift for iOS applicants.
 - [ ] For the API, use data provided by Listen Notes:
-	 - [ ] Use the following endpoint to fetch podcast data: https://www.listennotes.com/api/docs/?lang=kotlin&test=1#get-api-v2-best_podcasts
-	 - [ ] No API key required, you can simply use the mock server to fetch test data. [More information here](https://www.listennotes.help/article/48-how-to-test-the-podcast-api-without-an-api-key "More information here").
+     - [ ] Use the following endpoint to fetch podcast data: https://www.listennotes.com/api/docs/?lang=kotlin&test=1#get-api-v2-best_podcasts
+     - [ ] No API key required, you can simply use the mock server to fetch test data. [More information here](https://www.listennotes.help/article/48-how-to-test-the-podcast-api-without-an-api-key "More information here").
 - [ ] Focus on implementing the app in portrait orientation only.
 - [ ] The list should support pagination, loading 10 items at a time.
 
