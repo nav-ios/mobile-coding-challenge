@@ -17,14 +17,16 @@ final class PodcastCellController{
     }
     
     
-    func view() -> UITableViewCell {
-        let cell = PodcastCell()
+    func view(in tableView: UITableView) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PodcastCell") as! PodcastCell
         cell.labelTitle.text = model.title
         cell.labelDescription.text = model.description
         imageLoader?.loadImageData(from: model.thumbnailURL){ result in
             switch result{
             case let .success(data):
-                cell.imageThumnail.image = UIImage(data: data)
+                DispatchQueue.main.async {
+                    cell.imageThumnail.image = UIImage(data: data)
+                }
             case .failure(_):
                 cell.imageThumnail.image = UIImage(named: "questionmark.app.fill")
             }

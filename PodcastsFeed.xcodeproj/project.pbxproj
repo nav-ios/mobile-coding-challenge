@@ -12,6 +12,7 @@
 		5934236629FA46040048CAED /* PodcastLoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5934236529FA46040048CAED /* PodcastLoaderViewController.swift */; };
 		5934236829FA47910048CAED /* PodcastCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5934236729FA47910048CAED /* PodcastCellController.swift */; };
 		5934236B29FA4EC10048CAED /* PodcastListsComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5934236A29FA4EC10048CAED /* PodcastListsComposer.swift */; };
+		5934236E29FA4FE80048CAED /* Podcast.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5934236D29FA4FE80048CAED /* Podcast.storyboard */; };
 		59CA222629F9B45A00CA6CEE /* Dummy.json in Resources */ = {isa = PBXBuildFile; fileRef = 59CA222529F9B45A00CA6CEE /* Dummy.json */; };
 		59CA222829F9B48D00CA6CEE /* PodcastFeedEndToEndAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CA222729F9B48D00CA6CEE /* PodcastFeedEndToEndAPITests.swift */; };
 		59CA223029F9B5B000CA6CEE /* PodcastsListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CA222F29F9B5B000CA6CEE /* PodcastsListViewControllerTests.swift */; };
@@ -31,6 +32,7 @@
 		59DDE9B929F9B35000849E6F /* RemotePodcastClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DDE9B329F9B35000849E6F /* RemotePodcastClient.swift */; };
 		59DDE9BA29F9B35000849E6F /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DDE9B529F9B35000849E6F /* Podcast.swift */; };
 		59DDE9BB29F9B35000849E6F /* PodcastLoaderAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DDE9B629F9B35000849E6F /* PodcastLoaderAPI.swift */; };
+		59EAD59B29FA5DCA0086DDC1 /* URLSessionImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EAD59A29FA5DCA0086DDC1 /* URLSessionImageLoader.swift */; };
 		676EB587327CEBBF568761B2 /* Pods_PodcastsFeedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B814A58349A5F10B3981B8 /* Pods_PodcastsFeedTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +69,7 @@
 		5934236529FA46040048CAED /* PodcastLoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastLoaderViewController.swift; sourceTree = "<group>"; };
 		5934236729FA47910048CAED /* PodcastCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastCellController.swift; sourceTree = "<group>"; };
 		5934236A29FA4EC10048CAED /* PodcastListsComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastListsComposer.swift; sourceTree = "<group>"; };
+		5934236D29FA4FE80048CAED /* Podcast.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Podcast.storyboard; sourceTree = "<group>"; };
 		59CA222529F9B45A00CA6CEE /* Dummy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Dummy.json; sourceTree = "<group>"; };
 		59CA222729F9B48D00CA6CEE /* PodcastFeedEndToEndAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastFeedEndToEndAPITests.swift; sourceTree = "<group>"; };
 		59CA222D29F9B5B000CA6CEE /* PodcastsListViewControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PodcastsListViewControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +94,7 @@
 		59DDE9B329F9B35000849E6F /* RemotePodcastClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemotePodcastClient.swift; sourceTree = "<group>"; };
 		59DDE9B529F9B35000849E6F /* Podcast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
 		59DDE9B629F9B35000849E6F /* PodcastLoaderAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastLoaderAPI.swift; sourceTree = "<group>"; };
+		59EAD59A29FA5DCA0086DDC1 /* URLSessionImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionImageLoader.swift; sourceTree = "<group>"; };
 		9CACBDB752D5FDE681B90574 /* Pods-PodcastsFeedTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodcastsFeedTests.debug.xcconfig"; path = "Target Support Files/Pods-PodcastsFeedTests/Pods-PodcastsFeedTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B997846EA07C36D5BD05EB4E /* Pods_PodcastsFeed_PodcastsFeedUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PodcastsFeed_PodcastsFeedUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E331DB7213F6090BD1A5532E /* Pods-PodcastsFeed-PodcastsFeedUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodcastsFeed-PodcastsFeedUITests.release.xcconfig"; path = "Target Support Files/Pods-PodcastsFeed-PodcastsFeedUITests/Pods-PodcastsFeed-PodcastsFeedUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -163,6 +167,14 @@
 			path = Composers;
 			sourceTree = "<group>";
 		};
+		5934236C29FA4FD90048CAED /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5934236D29FA4FE80048CAED /* Podcast.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		59CA222E29F9B5B000CA6CEE /* PodcastsListViewControllerTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +211,7 @@
 		59DDE97E29F9B2C600849E6F /* PodcastsFeed */ = {
 			isa = PBXGroup;
 			children = (
+				5934236C29FA4FD90048CAED /* Views */,
 				5934236929FA4EA10048CAED /* Composers */,
 				59DDE9AF29F9B33600849E6F /* Feed Files */,
 				59DDE97F29F9B2C600849E6F /* AppDelegate.swift */,
@@ -242,6 +255,7 @@
 				59DDE9B229F9B34F00849E6F /* PodcastLoader.swift */,
 				59DDE9B629F9B35000849E6F /* PodcastLoaderAPI.swift */,
 				59DDE9B329F9B35000849E6F /* RemotePodcastClient.swift */,
+				59EAD59A29FA5DCA0086DDC1 /* URLSessionImageLoader.swift */,
 			);
 			path = "Feed Files";
 			sourceTree = "<group>";
@@ -402,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59DDE98C29F9B2C600849E6F /* LaunchScreen.storyboard in Resources */,
+				5934236E29FA4FE80048CAED /* Podcast.storyboard in Resources */,
 				59DDE98929F9B2C600849E6F /* Assets.xcassets in Resources */,
 				59CA223929F9B94200CA6CEE /* README.md in Resources */,
 				59DDE98729F9B2C600849E6F /* Main.storyboard in Resources */,
@@ -544,6 +559,7 @@
 				59DDE9BB29F9B35000849E6F /* PodcastLoaderAPI.swift in Sources */,
 				59DDE98429F9B2C600849E6F /* PodcastsListViewController.swift in Sources */,
 				5934236B29FA4EC10048CAED /* PodcastListsComposer.swift in Sources */,
+				59EAD59B29FA5DCA0086DDC1 /* URLSessionImageLoader.swift in Sources */,
 				59DDE9BA29F9B35000849E6F /* Podcast.swift in Sources */,
 				59DDE98029F9B2C600849E6F /* AppDelegate.swift in Sources */,
 				59DDE98229F9B2C600849E6F /* SceneDelegate.swift in Sources */,

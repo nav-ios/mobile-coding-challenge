@@ -9,10 +9,11 @@ import UIKit
 
 class PodcastCell: UITableViewCell {
 
-    let labelDescription = UILabel()
-    let labelTitle = UILabel()
-    let labelFavorite = UILabel()
-    let imageThumnail = UIImageView()
+    @IBOutlet weak var labelDescription: UILabel!
+    @IBOutlet weak var labelTitle: UILabel!
+    @IBOutlet weak var labelFavorite: UILabel!
+    @IBOutlet weak var imageThumnail: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

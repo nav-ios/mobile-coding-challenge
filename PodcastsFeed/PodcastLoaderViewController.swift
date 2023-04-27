@@ -24,7 +24,9 @@ final class PodcastLoaderViewController: NSObject{
      func load(){
         view.beginRefreshing()
         podcastLoader?.load(completion: { [weak self] result in
-            self?.view.endRefreshing()
+            DispatchQueue.main.async {
+                self?.view.endRefreshing()
+            }
             switch result{
             case let .success(arrayPodcasts):
                 self?.onLoad?(arrayPodcasts)
