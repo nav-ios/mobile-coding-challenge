@@ -20,7 +20,7 @@ final class PodcastCellController{
     func view(in tableView: UITableView) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PodcastCell") as! PodcastCell
         cell.labelTitle.text = model.title
-        cell.labelDescription.text = model.description
+        cell.labelDescription.text = model.publisher
         imageLoader?.loadImageData(from: model.thumbnailURL){ result in
             switch result{
             case let .success(data):
