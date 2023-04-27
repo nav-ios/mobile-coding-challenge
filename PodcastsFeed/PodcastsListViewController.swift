@@ -14,7 +14,7 @@ public protocol ImageLoader{
 class PodcastsListViewController: UITableViewController{
     private var podcastLoader: PodcastLoaderViewController?
     private var imageLoader: ImageLoader?
-    var arrayTable = [Podcast](){
+    var arrayTable = [PodcastCellController](){
         didSet{
             tableView.reloadData()
         }
@@ -28,8 +28,10 @@ class PodcastsListViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         refreshControl = podcastLoader?.view
-        podcastLoader?.onLoad = { arrayPodcasts in
-            self.arrayTable = arrayPodcasts
+        podcastLoader?.onLoad = { [weak self] arrayPodcasts in
+            self?.arrayTable = arrayPodcasts.map{ podcast in
+                PodcastCellController(imageLoader: self!.imageLoader!, model: podcast)
+            }
         }
         podcastLoader?.load()
         refreshControl?.beginRefreshing()
@@ -39,9 +41,11 @@ class PodcastsListViewController: UITableViewController{
         return arrayTable.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let model = arrayTable[indexPath.row]
-
-        let cell = PodcastCellController(imageLoader: imageLoader!, model: model)
-        return cell.view()
+        return cellController(forRowAt: indexPath).view()
+        
+    }
+    
+    private func cellController(forRowAt indexPath: IndexPath) -> PodcastCellController{
+        arrayTable[indexPath.row]
     }
 }
