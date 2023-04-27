@@ -10,19 +10,29 @@ import XCTest
 
 final class PodcastDetailsViewTests: XCTestCase {
 
-    func test_initial(){
+    func test_viewDidLoad_displaysFavouritedTitleOnButton(){
         let podcast = makePodcast(title: "Some Podcast", description: "Some description", isFavourite: true)
-        let sut = makeSUT()
+        let sut = makeSUT(with: podcast)
         sut.loadViewIfNeeded()
-        sut.model = podcast
-        XCTAssertEqual(sut.isFavourite, false)
-        
+        XCTAssertEqual(sut.isFavourite, true)
         
     }
     
-    func makeSUT() -> PodcastDetailViewController{
+    func test_viewDidLoad_doesnotDisplayFavouritedTitleOnButton(){
+        let podcast = makePodcast(title: "Some Podcast", description: "Some description", isFavourite: false)
+        let sut = makeSUT(with: podcast)
+        sut.loadViewIfNeeded()
+        XCTAssertEqual(sut.isFavourite, false)
+        
+    }
+    
+    
+    
+    func makeSUT(with model: Podcast) -> PodcastDetailViewController{
         let storyboard = UIStoryboard(name: "Podcast", bundle: Bundle(identifier: "com.heyhub.PodcastsFeed"))
-                let sut = storyboard.instantiateViewController(identifier: "ArtistDetailViewController") as! PodcastDetailViewController
+                let sut = storyboard.instantiateViewController(identifier: "PodcastDetailViewController") as! PodcastDetailViewController
+        sut.model = model
+
         return sut
         
     }
