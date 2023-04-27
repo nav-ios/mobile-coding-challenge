@@ -11,7 +11,7 @@ class URLSessionImageLoader: ImageLoader{
     let imageCache = NSCache<NSString, UIImage>()
 
     func loadImageData(from url: URL, completion: @escaping (Result<Data, Error>) -> Void) {
-        if let cachedImage = imageCache.object(forKey: url.absoluteString as NSString) as? UIImage {
+        if let cachedImage = imageCache.object(forKey: url.absoluteString as NSString) {
             completion(.success(cachedImage.pngData()!))
         } else {
             URLSession.shared.dataTask(with: url) { data, response, error in
