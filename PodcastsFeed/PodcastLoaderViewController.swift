@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 final class PodcastLoaderViewController: NSObject{
     private var podcastLoader: PodcastLoader?
     init(podcastLoader: PodcastLoader? = nil) {
