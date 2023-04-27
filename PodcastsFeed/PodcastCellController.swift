@@ -10,7 +10,7 @@ import UIKit
 
 final class PodcastCellController{
     private var imageLoader: ImageLoader?
-    private var model: Podcast
+    var model: Podcast
     private var cell: PodcastCell?
     init(imageLoader: ImageLoader, model: Podcast) {
         self.imageLoader = imageLoader
@@ -22,6 +22,13 @@ final class PodcastCellController{
         cell = tableView.dequeueReusableCell(withIdentifier: "PodcastCell") as? PodcastCell
         cell?.labelTitle.text = model.title
         cell?.labelDescription.text = model.publisher
+        
+        if UserDefaults.standard.bool(forKey: model.id) == true{
+            cell?.labelFavorite.isHidden = false
+        }else{
+            cell?.labelFavorite.isHidden = true
+        }
+        
         imageLoader?.loadImageData(from: model.thumbnailURL){ [weak self] result in
             switch result{
             case let .success(data):

@@ -6,16 +6,13 @@
 //
 
 import UIKit
-
-
-
 public protocol ImageLoader{
     
     func loadImageData(from url: URL, completion: @escaping (Result<Data, Error>) -> Void)
 }
 class PodcastsListViewController: UITableViewController{
     var podcastLoader: PodcastLoaderViewController?
-    private var imageLoader: ImageLoader?
+    private var imageLoader = URLSessionImageLoader()
     var arrayTable = [PodcastCellController](){
         didSet{
             DispatchQueue.main.async {
@@ -30,8 +27,10 @@ class PodcastsListViewController: UITableViewController{
         refreshControl = podcastLoader?.view
         podcastLoader?.load()
         refreshControl?.beginRefreshing()
-     
-       
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayTable.count
@@ -52,5 +51,11 @@ class PodcastsListViewController: UITableViewController{
     
     override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         arrayTable[indexPath.row].releaseCell()
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailsVC = self.storyboard?.instantiateViewController(identifier: "PodcastDetailViewController") as! PodcastDetailViewController
+        detailsVC.imageLoader = imageLoader
+        detailsVC.model = arrayTable[indexPath.row].model
+        self.navigationController?.pushViewController(detailsVC, animated: true)
     }
 }

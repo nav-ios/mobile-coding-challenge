@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 public class PodcastListsComposer{
     
-    static func composeWith(podcastLoader: PodcastLoader, imageLoader: ImageLoader) -> PodcastsListViewController{
+    static func composeWith(podcastLoader: PodcastLoader, imageLoader: ImageLoader) -> UINavigationController{
        let podcastLoader = PodcastLoaderViewController(podcastLoader: podcastLoader)
         let bundle = Bundle(identifier: "com.heyhub.PodcastsFeed")
         let storyBoard = UIStoryboard(name: "Podcast", bundle: bundle)
@@ -21,6 +21,8 @@ public class PodcastListsComposer{
                 PodcastCellController(imageLoader: imageLoader, model: podcast)
             }
         }
-        return podcastController
+        let navigationController = UINavigationController(rootViewController: podcastController)
+
+        return navigationController
     }
 }
