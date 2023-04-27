@@ -27,6 +27,7 @@ final class PodcastFeediOSTests: XCTestCase {
     func test_viewDidLoad_showsLoadingIndicator(){
         let (sut, loader) = makeSUT()
         sut.loadViewIfNeeded()
+        
         XCTAssertEqual(sut.refreshControl?.isRefreshing, true)
     }
     
