@@ -17,6 +17,7 @@ public class RemotePodcastClient: PodcastClient{
 
         parameters["q"] = "startup"
         parameters["sort_by_date"] = "1"
+
         client.search(parameters: parameters) { response in
             if let error = response.error {
                 switch (error) {

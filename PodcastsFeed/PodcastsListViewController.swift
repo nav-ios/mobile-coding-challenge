@@ -37,6 +37,7 @@ class PodcastsListViewController: UITableViewController{
         return arrayTable.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      
         return cellController(forRowAt: indexPath).view(in: tableView)
         
     }
@@ -47,5 +48,9 @@ class PodcastsListViewController: UITableViewController{
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
+    }
+    
+    override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        arrayTable[indexPath.row].releaseCell()
     }
 }

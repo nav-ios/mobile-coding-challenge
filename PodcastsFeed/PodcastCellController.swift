@@ -11,6 +11,7 @@ import UIKit
 final class PodcastCellController{
     private var imageLoader: ImageLoader?
     private var model: Podcast
+    private var cell: PodcastCell?
     init(imageLoader: ImageLoader, model: Podcast) {
         self.imageLoader = imageLoader
         self.model = model
@@ -18,19 +19,23 @@ final class PodcastCellController{
     
     
     func view(in tableView: UITableView) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PodcastCell") as! PodcastCell
-        cell.labelTitle.text = model.title
-        cell.labelDescription.text = model.publisher
-        imageLoader?.loadImageData(from: model.thumbnailURL){ result in
+        cell = tableView.dequeueReusableCell(withIdentifier: "PodcastCell") as? PodcastCell
+        cell?.labelTitle.text = model.title
+        cell?.labelDescription.text = model.publisher
+        imageLoader?.loadImageData(from: model.thumbnailURL){ [weak self] result in
             switch result{
             case let .success(data):
                 DispatchQueue.main.async {
-                    cell.imageThumnail.image = UIImage(data: data)
+                    self?.cell?.imageThumnail.image = UIImage(data: data)
                 }
             case .failure(_):
-                cell.imageThumnail.image = UIImage(named: "questionmark.app.fill")
+                self?.cell?.imageThumnail.image = UIImage(named: "questionmark.app.fill")
             }
         }
-        return cell
+        return cell!
+    }
+    
+    func releaseCell(){
+        cell = nil
     }
 }

@@ -6,16 +6,26 @@
 //
 
 import Foundation
+import UIKit
 class URLSessionImageLoader: ImageLoader{
-    func loadImageData(from url: URL, completion: @escaping (Result<Data, Error>) -> Void) {
+    let imageCache = NSCache<NSString, AnyObject>()
+    var imageURLString: String?
 
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard error == nil else {
-                completion(.failure(error!))
-                return
-            }
-            completion(.success(data!))
-        }.resume()
+    func loadImageData(from url: URL, completion: @escaping (Result<Data, Error>) -> Void) {
+        if let cachedImage = imageCache.object(forKey: url.absoluteString as NSString) as? UIImage {
+            completion(.success(cachedImage.pngData()!))
+        } else {
+            URLSession.shared.dataTask(with: url) { data, response, error in
+                guard error == nil else {
+                    completion(.failure(error!))
+                    return
+                }
+                self.imageCache.setObject(UIImage(data: data!)!, forKey: url.absoluteString as NSString)
+
+                completion(.success(data!))
+            }.resume()
+            
+        }
     }
     
     
