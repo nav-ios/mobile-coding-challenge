@@ -105,11 +105,13 @@ final class PodcastFeediOSTests: XCTestCase {
     }
     
     class LoaderSpy: PodcastLoader, ImageLoader{
-         var loadedImageURLs = [URL]()
-        
-        func loadImageData(from url: URL) {
+       
+        func loadImageData(from url: URL, completion: (Result<Data, Error>) -> Void) {
             loadedImageURLs.append(url)
         }
+        
+         var loadedImageURLs = [URL]()
+    
         
         var arrayCompletions = [(PodcastLoaderResult) -> Void]()
         

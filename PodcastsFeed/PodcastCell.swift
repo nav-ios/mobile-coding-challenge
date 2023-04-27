@@ -12,6 +12,7 @@ class PodcastCell: UITableViewCell {
     let labelDescription = UILabel()
     let labelTitle = UILabel()
     let labelFavorite = UILabel()
+    let imageThumnail = UIImageView()
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
