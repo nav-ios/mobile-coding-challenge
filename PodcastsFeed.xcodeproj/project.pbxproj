@@ -209,6 +209,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		5948F02E29FAD192003C2EDD /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				59DDE98329F9B2C600849E6F /* PodcastsListViewController.swift */,
+				59F2FFA429FA81E0001EDA7C /* PodcastDetailViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		59CA222E29F9B5B000CA6CEE /* PodcastsListViewControllerTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,12 +257,12 @@
 		59DDE97E29F9B2C600849E6F /* PodcastsFeed */ = {
 			isa = PBXGroup;
 			children = (
+				5948F02E29FAD192003C2EDD /* View Controllers */,
 				5934236C29FA4FD90048CAED /* Views */,
 				5934236929FA4EA10048CAED /* Composers */,
 				59DDE9AF29F9B33600849E6F /* Feed Files */,
 				59DDE97F29F9B2C600849E6F /* AppDelegate.swift */,
 				59DDE98129F9B2C600849E6F /* SceneDelegate.swift */,
-				59DDE98329F9B2C600849E6F /* PodcastsListViewController.swift */,
 				59DDE98529F9B2C600849E6F /* Main.storyboard */,
 				59DDE98829F9B2C600849E6F /* Assets.xcassets */,
 				59DDE98A29F9B2C600849E6F /* LaunchScreen.storyboard */,
@@ -261,7 +270,6 @@
 				59CA223A29F9BECE00CA6CEE /* PodcastCell.swift */,
 				5934236529FA46040048CAED /* PodcastLoaderViewController.swift */,
 				5934236729FA47910048CAED /* PodcastCellController.swift */,
-				59F2FFA429FA81E0001EDA7C /* PodcastDetailViewController.swift */,
 			);
 			path = PodcastsFeed;
 			sourceTree = "<group>";

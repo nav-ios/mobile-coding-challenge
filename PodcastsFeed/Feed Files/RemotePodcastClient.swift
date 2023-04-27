@@ -11,14 +11,12 @@ import PodcastAPI
 public class RemotePodcastClient: PodcastClient{
     
     public func getPodcasts(completion: @escaping (PodcastClientResult) -> Void) {
-        let apiKey = ""
+        let apiKey = "58f6952f07d04062b5e2581ad61f134c"
         let client = PodcastAPI.Client(apiKey: apiKey)
         var parameters: [String: String] = [:]
         parameters["genre_id"] = "93"
-        parameters["page"] = "2"
-        parameters["region"] = "us"
-        parameters["sort"] = "listen_score"
-        parameters["safe_mode"] = "0"
+        parameters["page"] = "8"
+    
 
         client.search(parameters: parameters) { response in
             if let error = response.error {
