@@ -14,7 +14,7 @@ final class PodcastFeediOSTests: XCTestCase {
 
     func test_init_instanceDoesnotCallPodcastLoaderOnCreation(){
         let loader = LoaderSpy()
-        _ = PodcastsListViewController(podcastLoader: loader, imageLoader: loader)
+        _ = PodcastListsComposer.composeWith(podcastLoader: loader, imageLoader: loader)
         XCTAssertEqual(loader.loadCallCount, 0)
     }
     
@@ -92,7 +92,7 @@ final class PodcastFeediOSTests: XCTestCase {
     
     func makeSUT() -> (PodcastsListViewController, LoaderSpy){
         let loader = LoaderSpy()
-        let sut = PodcastsListViewController(podcastLoader: loader, imageLoader: loader)
+        let sut = PodcastListsComposer.composeWith(podcastLoader: loader, imageLoader: loader)
         return (sut, loader)
     }
     

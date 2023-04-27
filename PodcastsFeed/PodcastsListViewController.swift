@@ -7,6 +7,20 @@
 
 import UIKit
 
+
+public class PodcastListsComposer{
+    
+    static func composeWith(podcastLoader: PodcastLoader, imageLoader: ImageLoader) -> PodcastsListViewController{
+       let podcastLoader = PodcastLoaderViewController(podcastLoader: podcastLoader)
+        let podcastController = PodcastsListViewController(podcastLoader: podcastLoader)
+        podcastLoader.onLoad = { [weak podcastController] arrayPodcasts in
+            podcastController?.arrayTable = arrayPodcasts.map{ podcast in
+                PodcastCellController(imageLoader: imageLoader, model: podcast)
+            }
+        }
+        return podcastController
+    }
+}
 public protocol ImageLoader{
     
     func loadImageData(from url: URL, completion: (Result<Data, Error>) -> Void)
@@ -19,20 +33,16 @@ class PodcastsListViewController: UITableViewController{
             tableView.reloadData()
         }
     }
-    convenience init(podcastLoader: PodcastLoader, imageLoader: ImageLoader){
+    
+    convenience init(podcastLoader: PodcastLoaderViewController){
        self.init()
-       self.podcastLoader = PodcastLoaderViewController(podcastLoader: podcastLoader)
-        self.imageLoader = imageLoader
+        self.podcastLoader = podcastLoader
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         refreshControl = podcastLoader?.view
-        podcastLoader?.onLoad = { [weak self] arrayPodcasts in
-            self?.arrayTable = arrayPodcasts.map{ podcast in
-                PodcastCellController(imageLoader: self!.imageLoader!, model: podcast)
-            }
-        }
+      
         podcastLoader?.load()
         refreshControl?.beginRefreshing()
        
