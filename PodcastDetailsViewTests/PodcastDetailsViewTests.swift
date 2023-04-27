@@ -27,6 +27,17 @@ final class PodcastDetailsViewTests: XCTestCase {
     }
     
     
+    func test_viewDidLoad_checksValuesOnLabel(){
+        let podcast = makePodcast(title: "Some Podcast", description: "Some description", isFavourite: false)
+        let sut = makeSUT(with: podcast)
+        sut.loadViewIfNeeded()
+        XCTAssertEqual(sut.isFavourite, false)
+        XCTAssertEqual(sut.titlePodcast, podcast.title)
+        XCTAssertEqual(sut.descriptionPodcast, podcast.description)
+
+        
+    }
+    
     
     func makeSUT(with model: Podcast) -> PodcastDetailViewController{
         let storyboard = UIStoryboard(name: "Podcast", bundle: Bundle(identifier: "com.heyhub.PodcastsFeed"))
@@ -55,5 +66,15 @@ final class PodcastDetailsViewTests: XCTestCase {
 private extension PodcastDetailViewController{
     var isFavourite: Bool?{
         return buttonFavourite.currentTitle == "Favourited"
+    }
+    
+    var titlePodcast: String?{
+        return labelTitle.text
+    }
+    var author: String?{
+        return labelAuthor.text
+    }
+    var descriptionPodcast: String?{
+        return labelDescription.text
     }
 }
