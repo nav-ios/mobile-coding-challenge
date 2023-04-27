@@ -14,7 +14,7 @@ final class PodcastFeediOSTests: XCTestCase {
 
     func test_init_instanceDoesnotCallPodcastLoaderOnCreation(){
         let loader = LoaderSpy()
-        _ = PodcastsListViewController(loader: loader)
+        _ = PodcastsListViewController(podcastLoader: loader, imageLoader: loader)
         XCTAssertEqual(loader.loadCallCount, 0)
     }
     
@@ -75,9 +75,24 @@ final class PodcastFeediOSTests: XCTestCase {
         XCTAssertEqual(cell2?.descriptionString, podcast2.description)
     }
     
+    func test_viewDidLoad_invokesImageLoaderOncellCreation(){
+        let (sut, loader) = makeSUT()
+        sut.loadViewIfNeeded()
+        
+        let podcast1 = makePodcast(title: "Title 1", description: "Description 1")
+        let podcast2 = makePodcast(title: "Title 2", description: "Description 2")
+        loader.completeLoading([podcast1, podcast2])
+
+        XCTAssertEqual(sut.numberOfLoadedCells(), 2)
+        
+        sut.makeCellVisible(at: 0)
+        sut.makeCellVisible(at: 1)
+        XCTAssertEqual(loader.loadedImageURLs, [podcast1.thumbnailURL, podcast2.thumbnailURL])
+    }
+    
     func makeSUT() -> (PodcastsListViewController, LoaderSpy){
         let loader = LoaderSpy()
-        let sut = PodcastsListViewController(loader: loader)
+        let sut = PodcastsListViewController(podcastLoader: loader, imageLoader: loader)
         return (sut, loader)
     }
     
@@ -89,7 +104,13 @@ final class PodcastFeediOSTests: XCTestCase {
         URL(string: "http://any-podcast-url.com")!
     }
     
-    class LoaderSpy: PodcastLoader{
+    class LoaderSpy: PodcastLoader, ImageLoader{
+         var loadedImageURLs = [URL]()
+        
+        func loadImageData(from url: URL) {
+            loadedImageURLs.append(url)
+        }
+        
         var arrayCompletions = [(PodcastLoaderResult) -> Void]()
         
         func load(completion: @escaping (PodcastLoaderResult) -> Void) {
@@ -111,6 +132,10 @@ final class PodcastFeediOSTests: XCTestCase {
 private extension PodcastsListViewController{
     func numberOfLoadedCells() -> Int{
         tableView.numberOfRows(inSection: 0)
+    }
+    
+    func makeCellVisible(at row: Int){
+        podcastView(at: row)
     }
     
     func podcastView(at row: Int) -> PodcastCell?{

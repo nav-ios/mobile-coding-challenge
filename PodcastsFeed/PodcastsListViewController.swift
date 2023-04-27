@@ -7,16 +7,21 @@
 
 import UIKit
 
+public protocol ImageLoader{
+    func loadImageData(from url: URL)
+}
 class PodcastsListViewController: UITableViewController{
-    private var loader: PodcastLoader?
+    private var podcastLoader: PodcastLoader?
+    private var imageLoader: ImageLoader?
     var arrayTable = [Podcast](){
         didSet{
             tableView.reloadData()
         }
     }
-   convenience init(loader: PodcastLoader){
+    convenience init(podcastLoader: PodcastLoader, imageLoader: ImageLoader){
        self.init()
-       self.loader = loader
+       self.podcastLoader = podcastLoader
+        self.imageLoader = imageLoader
     }
     
     override func viewDidLoad() {
@@ -24,7 +29,7 @@ class PodcastsListViewController: UITableViewController{
         refreshControl = UIRefreshControl()
         
         refreshControl?.beginRefreshing()
-        loader?.load(completion: { [weak self] result in
+        podcastLoader?.load(completion: { [weak self] result in
             self?.refreshControl?.endRefreshing()
             switch result{
             case let .success(arrayPodcasts):
@@ -42,6 +47,7 @@ class PodcastsListViewController: UITableViewController{
         let model = arrayTable[indexPath.row]
         cell.labelTitle.text = model.title
         cell.labelDescription.text = model.description
+        imageLoader?.loadImageData(from: model.thumbnailURL)
         return cell
     }
 }
