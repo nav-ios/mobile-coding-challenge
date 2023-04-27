@@ -24,7 +24,6 @@ public class PodcastLoaderAPI: PodcastLoader{
                 let arrayPodcasts = Item(json: data).arrayPodcasts
                 completion(.success(arrayPodcasts))
             }
-            
         }
     }
 }
