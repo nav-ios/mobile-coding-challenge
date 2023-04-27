@@ -26,9 +26,9 @@ You will be building a simple two-screen podcasts app. A basic mockup is provide
 
 #### Screen 1
 
-- [ ] Show a list of podcasts using the endpoint provided below.
-- [ ] Each list item should show the podcast thumbnail, title, and publisher name.
-- [ ] Leave some space for the "Favourited" label (refer to the second podcast in the list in the mockup above).
+- ✅ Show a list of podcasts using the endpoint provided below.
+- ✅ Each list item should show the podcast thumbnail, title, and publisher name.
+- ✅ Leave some space for the "Favourited" label (refer to the second podcast in the list in the mockup above).
 - [ ] Show the Favourited label only if the podcast has been favourited, otherwise hide the label.
 
 #### Screen 2
