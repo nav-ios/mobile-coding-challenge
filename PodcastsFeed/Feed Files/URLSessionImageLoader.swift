@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 class URLSessionImageLoader: ImageLoader{
     let imageCache = NSCache<NSString, AnyObject>()
-    var imageURLString: String?
 
     func loadImageData(from url: URL, completion: @escaping (Result<Data, Error>) -> Void) {
         if let cachedImage = imageCache.object(forKey: url.absoluteString as NSString) as? UIImage {
