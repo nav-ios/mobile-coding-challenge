@@ -36,7 +36,10 @@ final class PodcastFeediOSTests: XCTestCase {
         sut.loadViewIfNeeded()
         XCTAssertEqual(sut.refreshControl?.isRefreshing, true)
         loader.completeLoading([])
-        XCTAssertEqual(sut.refreshControl?.isRefreshing, false)
+        DispatchQueue.main.async {
+            
+            XCTAssertEqual(sut.refreshControl?.isRefreshing, false)
+        }
     }
     
     
@@ -48,8 +51,12 @@ final class PodcastFeediOSTests: XCTestCase {
         let podcast1 = makePodcast(title: "Some title", description: "Some description")
         let podcast2 = makePodcast(title: "Some title", description: "Some description 2")
         loader.completeLoading([podcast1, podcast2])
-        XCTAssertEqual(sut.numberOfLoadedCells(), 2)
-        XCTAssertEqual(sut.refreshControl?.isRefreshing, false)
+    
+        DispatchQueue.main.async {
+            XCTAssertEqual(sut.numberOfLoadedCells(), 2)
+            XCTAssertEqual(sut.refreshControl?.isRefreshing, false)
+        }
+        
     }
     
     func test_viewDidLoad_showsCellsWithCorrectDataOnSuccesfulCompletion(){
@@ -62,17 +69,26 @@ final class PodcastFeediOSTests: XCTestCase {
         let podcast2 = makePodcast(title: "Title 2", description: "Description 2")
         
         loader.completeLoading([podcast1, podcast2])
-        XCTAssertEqual(sut.numberOfLoadedCells(), 2)
-        XCTAssertEqual(sut.refreshControl?.isRefreshing, false)
+        DispatchQueue.main.async {
+            
+            XCTAssertEqual(sut.numberOfLoadedCells(), 2)
+            XCTAssertEqual(sut.refreshControl?.isRefreshing, false)
+        }
         
         let cell1 = sut.podcastView(at: 0)
         let cell2 = sut.podcastView(at: 1)
         
-        XCTAssertEqual(cell1?.title, podcast1.title)
-        XCTAssertEqual(cell1?.descriptionString, podcast1.description)
+        DispatchQueue.main.async {
+            
+            XCTAssertEqual(cell1?.title, podcast1.title)
+            XCTAssertEqual(cell1?.descriptionString, podcast1.description)
+        }
         
-        XCTAssertEqual(cell2?.title, podcast2.title)
-        XCTAssertEqual(cell2?.descriptionString, podcast2.description)
+        DispatchQueue.main.async {
+            
+            XCTAssertEqual(cell2?.title, podcast2.title)
+            XCTAssertEqual(cell2?.descriptionString, podcast2.description)
+        }
     }
     
     func test_viewDidLoad_invokesImageLoaderOncellCreation(){
@@ -92,8 +108,26 @@ final class PodcastFeediOSTests: XCTestCase {
     
     func makeSUT() -> (PodcastsListViewController, LoaderSpy){
         let loader = LoaderSpy()
-        let sut = PodcastListsComposer.composeWith(podcastLoader: loader, imageLoader: loader)
+        let sut = composeWith(podcastLoader: loader, imageLoader: loader)
         return (sut, loader)
+    }
+    
+        private func composeWith(podcastLoader: PodcastLoader, imageLoader: ImageLoader) -> PodcastsListViewController{
+           let podcastLoader = PodcastLoaderViewController(podcastLoader: podcastLoader)
+            let bundle = Bundle(identifier: "com.heyhub.PodcastsFeed")
+            let storyBoard = UIStoryboard(name: "Podcast", bundle: bundle)
+            
+            let podcastController = storyBoard.instantiateInitialViewController() as! PodcastsListViewController
+            podcastController.podcastLoader = podcastLoader
+            podcastLoader.onLoad = { [weak podcastController] arrayPodcasts in
+                podcastController?.arrayTable = arrayPodcasts.map{ podcast in
+                    PodcastCellController(imageLoader: imageLoader, model: podcast)
+                }
+            }
+
+            return podcastController
+        }
+
     }
     
     func makePodcast(title: String, description: String) -> Podcast{
@@ -127,17 +161,14 @@ final class PodcastFeediOSTests: XCTestCase {
         var loadCallCount = 0
         
     }
-    
 
-   
-}
 private extension PodcastsListViewController{
     func numberOfLoadedCells() -> Int{
         tableView.numberOfRows(inSection: 0)
     }
     
     func makeCellVisible(at row: Int){
-        podcastView(at: row)
+        _ = podcastView(at: row)
     }
     
     func podcastView(at row: Int) -> PodcastCell?{

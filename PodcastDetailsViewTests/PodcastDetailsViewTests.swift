@@ -6,12 +6,13 @@
 //
 
 import XCTest
-@testable import PodcastDetailsView
+@testable import PodcastsFeed
 
 final class PodcastDetailsViewTests: XCTestCase {
 
     func test_initial(){
-        XCTAssertEqual(3, 3)
+        let sut = PodcastDetailViewController()
+        
     }
 
 }
