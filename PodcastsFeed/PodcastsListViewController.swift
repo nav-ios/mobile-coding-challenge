@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 public protocol ImageLoader{
     
     func loadImageData(from url: URL, completion: (Result<Data, Error>) -> Void)
@@ -40,18 +39,9 @@ class PodcastsListViewController: UITableViewController{
         return arrayTable.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = PodcastCell()
         let model = arrayTable[indexPath.row]
-        cell.labelTitle.text = model.title
-        cell.labelDescription.text = model.description
-        imageLoader?.loadImageData(from: model.thumbnailURL){ result in
-            switch result{
-            case let .success(data):
-                cell.imageThumnail.image = UIImage(data: data)
-            case .failure(_):
-                cell.imageThumnail.image = UIImage(named: "questionmark.app.fill")
-            }
-        }
-        return cell
+
+        let cell = PodcastCellController(imageLoader: imageLoader!, model: model)
+        return cell.view()
     }
 }
