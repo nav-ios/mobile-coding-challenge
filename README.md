@@ -1,6 +1,7 @@
 # Mobile Developer Coding Challenge
 
-#Audiobooks.com Dependency Diagram:
+# Audiobooks.com Dependency Diagram:
+
 ![Alt text](/Images/AudioBooksDependencyDiagram.png "Audiobooks Overview")
 
 
