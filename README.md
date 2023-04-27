@@ -1,5 +1,9 @@
 # Mobile Developer Coding Challenge
 
+#Audiobooks.com Dependency Diagram:
+![Alt text](/Images/AudioBooksDependencyDiagram.png "Audiobooks Overview")
+
+
 ### TDD Flow:
 ```
 User launches app -> Expects to see latest podcasts fetched from internet
