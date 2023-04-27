@@ -7,9 +7,6 @@
 
 import UIKit
 
-struct PodcastKeys{
-    static let NSFavourite = "NSFavouriteDict"
-}
 class PodcastDetailViewController: UIViewController {
 
     @IBOutlet weak var labelTitle: UILabel!
@@ -24,7 +21,7 @@ class PodcastDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewObjects()
-        manageFavourite()
+        manageFavourite(isFromButton: false)
         
         labelTitle.text = model?.title
         labelAuthor.text = model?.publisher
@@ -50,23 +47,26 @@ class PodcastDetailViewController: UIViewController {
     }
     
     @IBAction func actionFavourite(_ sender: UIButton) {
-        guard let model = model else {return}
-        if UserDefaults.standard.bool(forKey: model.id) == true{
-            UserDefaults.standard.set(false, forKey: model.id)
-            buttonFavourite.setTitle("Favourite", for: .normal)
-        }else{
-            UserDefaults.standard.set(true, forKey: model.id)
-            buttonFavourite.setTitle("Favourited", for: .normal)
-        }
+        manageFavourite(isFromButton: true)
         
     }
     
-    private func manageFavourite(){
+    private func manageFavourite(isFromButton: Bool){
+        
         guard let model = model else {return}
         if UserDefaults.standard.bool(forKey: model.id) == true{
-            buttonFavourite.setTitle("Favourited", for: .normal)
+            if isFromButton{ UserDefaults.standard.set(false, forKey: model.id)
+                buttonFavourite.setTitle("Favourite", for: .normal)
+            }else{
+                buttonFavourite.setTitle("Favourited", for: .normal)
+            }
         }else{
-            buttonFavourite.setTitle("Favourite", for: .normal)
+            if isFromButton{ UserDefaults.standard.set(true, forKey: model.id)
+                buttonFavourite.setTitle("Favourited", for: .normal)
+            }else{
+                buttonFavourite.setTitle("Favourite", for: .normal)
+
+            }
         }
         
     }
