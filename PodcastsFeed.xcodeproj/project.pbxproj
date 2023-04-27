@@ -34,13 +34,7 @@
 		59DDE9BB29F9B35000849E6F /* PodcastLoaderAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DDE9B629F9B35000849E6F /* PodcastLoaderAPI.swift */; };
 		59EAD59B29FA5DCA0086DDC1 /* URLSessionImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EAD59A29FA5DCA0086DDC1 /* URLSessionImageLoader.swift */; };
 		59F2FFA529FA81E0001EDA7C /* PodcastDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F2FFA429FA81E0001EDA7C /* PodcastDetailViewController.swift */; };
-		59F2FFAD29FA826F001EDA7C /* PodcastDetailsViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F2FFAC29FA826F001EDA7C /* PodcastDetailsViewTests.swift */; };
-		59F2FFBC29FA8658001EDA7C /* PodcastDetailsView.docc in Sources */ = {isa = PBXBuildFile; fileRef = 59F2FFBB29FA8658001EDA7C /* PodcastDetailsView.docc */; };
-		59F2FFC229FA8659001EDA7C /* PodcastDetailsView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59F2FFB829FA8658001EDA7C /* PodcastDetailsView.framework */; };
-		59F2FFC929FA8659001EDA7C /* PodcastDetailsViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F2FFC829FA8659001EDA7C /* PodcastDetailsViewTests.swift */; };
-		59F2FFCA29FA8659001EDA7C /* PodcastDetailsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 59F2FFBA29FA8658001EDA7C /* PodcastDetailsView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		59F2FFCD29FA8659001EDA7C /* PodcastDetailsView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59F2FFB829FA8658001EDA7C /* PodcastDetailsView.framework */; };
-		59F2FFCE29FA8659001EDA7C /* PodcastDetailsView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 59F2FFB829FA8658001EDA7C /* PodcastDetailsView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		59F2FFD729FA9B1B001EDA7C /* PodcastDetailsViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F2FFD629FA9B1B001EDA7C /* PodcastDetailsViewTests.swift */; };
 		676EB587327CEBBF568761B2 /* Pods_PodcastsFeedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B814A58349A5F10B3981B8 /* Pods_PodcastsFeedTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,27 +67,6 @@
 			remoteGlobalIDString = 59DDE97B29F9B2C600849E6F;
 			remoteInfo = PodcastsFeed;
 		};
-		59F2FFC329FA8659001EDA7C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 59DDE97429F9B2C600849E6F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 59F2FFB729FA8658001EDA7C;
-			remoteInfo = PodcastDetailsView;
-		};
-		59F2FFC529FA8659001EDA7C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 59DDE97429F9B2C600849E6F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 59DDE97B29F9B2C600849E6F;
-			remoteInfo = PodcastsFeed;
-		};
-		59F2FFCB29FA8659001EDA7C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 59DDE97429F9B2C600849E6F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 59F2FFB729FA8658001EDA7C;
-			remoteInfo = PodcastDetailsView;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -103,7 +76,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				59F2FFCE29FA8659001EDA7C /* PodcastDetailsView.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,12 +119,9 @@
 		59EAD59A29FA5DCA0086DDC1 /* URLSessionImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionImageLoader.swift; sourceTree = "<group>"; };
 		59F2FFA429FA81E0001EDA7C /* PodcastDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastDetailViewController.swift; sourceTree = "<group>"; };
 		59F2FFAA29FA826F001EDA7C /* PodcastDetailsViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PodcastDetailsViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		59F2FFAC29FA826F001EDA7C /* PodcastDetailsViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastDetailsViewTests.swift; sourceTree = "<group>"; };
-		59F2FFB829FA8658001EDA7C /* PodcastDetailsView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PodcastDetailsView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		59F2FFBA29FA8658001EDA7C /* PodcastDetailsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PodcastDetailsView.h; sourceTree = "<group>"; };
 		59F2FFBB29FA8658001EDA7C /* PodcastDetailsView.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = PodcastDetailsView.docc; sourceTree = "<group>"; };
-		59F2FFC129FA8658001EDA7C /* PodcastDetailsViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PodcastDetailsViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		59F2FFC829FA8659001EDA7C /* PodcastDetailsViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastDetailsViewTests.swift; sourceTree = "<group>"; };
+		59F2FFD629FA9B1B001EDA7C /* PodcastDetailsViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastDetailsViewTests.swift; sourceTree = "<group>"; };
 		9CACBDB752D5FDE681B90574 /* Pods-PodcastsFeedTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodcastsFeedTests.debug.xcconfig"; path = "Target Support Files/Pods-PodcastsFeedTests/Pods-PodcastsFeedTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B997846EA07C36D5BD05EB4E /* Pods_PodcastsFeed_PodcastsFeedUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PodcastsFeed_PodcastsFeedUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E331DB7213F6090BD1A5532E /* Pods-PodcastsFeed-PodcastsFeedUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodcastsFeed-PodcastsFeedUITests.release.xcconfig"; path = "Target Support Files/Pods-PodcastsFeed-PodcastsFeedUITests/Pods-PodcastsFeed-PodcastsFeedUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -172,7 +141,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				430367846C2385847419C929 /* Pods_PodcastsFeed.framework in Frameworks */,
-				59F2FFCD29FA8659001EDA7C /* PodcastDetailsView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,21 +164,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		59F2FFB529FA8658001EDA7C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		59F2FFBE29FA8658001EDA7C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				59F2FFC229FA8659001EDA7C /* PodcastDetailsView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,7 +227,6 @@
 				59CA222E29F9B5B000CA6CEE /* PodcastsListViewControllerTests */,
 				59F2FFAB29FA826F001EDA7C /* PodcastDetailsViewTests */,
 				59F2FFB929FA8658001EDA7C /* PodcastDetailsView */,
-				59F2FFC729FA8659001EDA7C /* PodcastDetailsViewTests */,
 				59DDE97D29F9B2C600849E6F /* Products */,
 				22704428C61BD7BA27281BD9 /* Pods */,
 				137DEF24C5386E352BF8C094 /* Frameworks */,
@@ -289,8 +241,6 @@
 				59DDE99C29F9B2C700849E6F /* PodcastsFeedUITests.xctest */,
 				59CA222D29F9B5B000CA6CEE /* PodcastsListViewControllerTests.xctest */,
 				59F2FFAA29FA826F001EDA7C /* PodcastDetailsViewTests.xctest */,
-				59F2FFB829FA8658001EDA7C /* PodcastDetailsView.framework */,
-				59F2FFC129FA8658001EDA7C /* PodcastDetailsViewTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -367,7 +317,7 @@
 		59F2FFAB29FA826F001EDA7C /* PodcastDetailsViewTests */ = {
 			isa = PBXGroup;
 			children = (
-				59F2FFAC29FA826F001EDA7C /* PodcastDetailsViewTests.swift */,
+				59F2FFD629FA9B1B001EDA7C /* PodcastDetailsViewTests.swift */,
 			);
 			path = PodcastDetailsViewTests;
 			sourceTree = "<group>";
@@ -381,26 +331,7 @@
 			path = PodcastDetailsView;
 			sourceTree = "<group>";
 		};
-		59F2FFC729FA8659001EDA7C /* PodcastDetailsViewTests */ = {
-			isa = PBXGroup;
-			children = (
-				59F2FFC829FA8659001EDA7C /* PodcastDetailsViewTests.swift */,
-			);
-			path = PodcastDetailsViewTests;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
-
-/* Begin PBXHeadersBuildPhase section */
-		59F2FFB329FA8658001EDA7C /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				59F2FFCA29FA8659001EDA7C /* PodcastDetailsView.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		59CA222C29F9B5B000CA6CEE /* PodcastsListViewControllerTests */ = {
@@ -435,7 +366,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				59F2FFCC29FA8659001EDA7C /* PBXTargetDependency */,
 			);
 			name = PodcastsFeed;
 			productName = PodcastsFeed;
@@ -499,43 +429,6 @@
 			productReference = 59F2FFAA29FA826F001EDA7C /* PodcastDetailsViewTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		59F2FFB729FA8658001EDA7C /* PodcastDetailsView */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 59F2FFCF29FA865A001EDA7C /* Build configuration list for PBXNativeTarget "PodcastDetailsView" */;
-			buildPhases = (
-				59F2FFB329FA8658001EDA7C /* Headers */,
-				59F2FFB429FA8658001EDA7C /* Sources */,
-				59F2FFB529FA8658001EDA7C /* Frameworks */,
-				59F2FFB629FA8658001EDA7C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = PodcastDetailsView;
-			productName = PodcastDetailsView;
-			productReference = 59F2FFB829FA8658001EDA7C /* PodcastDetailsView.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		59F2FFC029FA8658001EDA7C /* PodcastDetailsViewTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 59F2FFD329FA865A001EDA7C /* Build configuration list for PBXNativeTarget "PodcastDetailsViewTests" */;
-			buildPhases = (
-				59F2FFBD29FA8658001EDA7C /* Sources */,
-				59F2FFBE29FA8658001EDA7C /* Frameworks */,
-				59F2FFBF29FA8658001EDA7C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				59F2FFC429FA8659001EDA7C /* PBXTargetDependency */,
-				59F2FFC629FA8659001EDA7C /* PBXTargetDependency */,
-			);
-			name = PodcastDetailsViewTests;
-			productName = PodcastDetailsViewTests;
-			productReference = 59F2FFC129FA8658001EDA7C /* PodcastDetailsViewTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -563,13 +456,7 @@
 					};
 					59F2FFA929FA826F001EDA7C = {
 						CreatedOnToolsVersion = 14.1;
-						TestTargetID = 59DDE97B29F9B2C600849E6F;
-					};
-					59F2FFB729FA8658001EDA7C = {
-						CreatedOnToolsVersion = 14.1;
-					};
-					59F2FFC029FA8658001EDA7C = {
-						CreatedOnToolsVersion = 14.1;
+						LastSwiftMigration = 1410;
 						TestTargetID = 59DDE97B29F9B2C600849E6F;
 					};
 				};
@@ -592,8 +479,6 @@
 				59DDE99B29F9B2C700849E6F /* PodcastsFeedUITests */,
 				59CA222C29F9B5B000CA6CEE /* PodcastsListViewControllerTests */,
 				59F2FFA929FA826F001EDA7C /* PodcastDetailsViewTests */,
-				59F2FFB729FA8658001EDA7C /* PodcastDetailsView */,
-				59F2FFC029FA8658001EDA7C /* PodcastDetailsViewTests */,
 			);
 		};
 /* End PBXProject section */
@@ -634,20 +519,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		59F2FFA829FA826F001EDA7C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		59F2FFB629FA8658001EDA7C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		59F2FFBF29FA8658001EDA7C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -811,23 +682,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59F2FFAD29FA826F001EDA7C /* PodcastDetailsViewTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		59F2FFB429FA8658001EDA7C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				59F2FFBC29FA8658001EDA7C /* PodcastDetailsView.docc in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		59F2FFBD29FA8658001EDA7C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				59F2FFC929FA8659001EDA7C /* PodcastDetailsViewTests.swift in Sources */,
+				59F2FFD729FA9B1B001EDA7C /* PodcastDetailsViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -853,21 +708,6 @@
 			isa = PBXTargetDependency;
 			target = 59DDE97B29F9B2C600849E6F /* PodcastsFeed */;
 			targetProxy = 59F2FFAE29FA826F001EDA7C /* PBXContainerItemProxy */;
-		};
-		59F2FFC429FA8659001EDA7C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 59F2FFB729FA8658001EDA7C /* PodcastDetailsView */;
-			targetProxy = 59F2FFC329FA8659001EDA7C /* PBXContainerItemProxy */;
-		};
-		59F2FFC629FA8659001EDA7C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 59DDE97B29F9B2C600849E6F /* PodcastsFeed */;
-			targetProxy = 59F2FFC529FA8659001EDA7C /* PBXContainerItemProxy */;
-		};
-		59F2FFCC29FA8659001EDA7C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 59F2FFB729FA8658001EDA7C /* PodcastDetailsView */;
-			targetProxy = 59F2FFCB29FA8659001EDA7C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1183,14 +1023,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4E59WA6F2N;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.heyhub.PodcastDetailsViewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PodcastsFeed.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PodcastsFeed";
@@ -1201,106 +1048,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4E59WA6F2N;
 				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.heyhub.PodcastDetailsViewTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PodcastsFeed.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PodcastsFeed";
-			};
-			name = Release;
-		};
-		59F2FFD029FA865A001EDA7C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 4E59WA6F2N;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.heyhub.PodcastDetailsView;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		59F2FFD129FA865A001EDA7C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 4E59WA6F2N;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.heyhub.PodcastDetailsView;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		59F2FFD429FA865A001EDA7C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4E59WA6F2N;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.heyhub.PodcastDetailsViewTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PodcastsFeed.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PodcastsFeed";
-			};
-			name = Debug;
-		};
-		59F2FFD529FA865A001EDA7C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4E59WA6F2N;
-				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.heyhub.PodcastDetailsViewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1364,24 +1121,6 @@
 			buildConfigurations = (
 				59F2FFB129FA8270001EDA7C /* Debug */,
 				59F2FFB229FA8270001EDA7C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		59F2FFCF29FA865A001EDA7C /* Build configuration list for PBXNativeTarget "PodcastDetailsView" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				59F2FFD029FA865A001EDA7C /* Debug */,
-				59F2FFD129FA865A001EDA7C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		59F2FFD329FA865A001EDA7C /* Build configuration list for PBXNativeTarget "PodcastDetailsViewTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				59F2FFD429FA865A001EDA7C /* Debug */,
-				59F2FFD529FA865A001EDA7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

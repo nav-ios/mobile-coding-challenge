@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>PodcastDetailsView.xcscheme_^#shared#^_</key>
+		<key>PodcastDetailsViewTests.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>7</integer>
@@ -43,6 +43,11 @@
 			<true/>
 		</dict>
 		<key>59F2FFA929FA826F001EDA7C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>59F2FFB729FA8658001EDA7C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
