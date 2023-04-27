@@ -69,10 +69,10 @@ final class PodcastFeediOSTests: XCTestCase {
         let cell2 = sut.podcastView(at: 1)
         
         XCTAssertEqual(cell1?.title, podcast1.title)
-        XCTAssertEqual(cell1?.description, podcast1.description)
+        XCTAssertEqual(cell1?.descriptionString, podcast1.description)
         
         XCTAssertEqual(cell2?.title, podcast2.title)
-        XCTAssertEqual(cell2?.description, podcast2.description)
+        XCTAssertEqual(cell2?.descriptionString, podcast2.description)
     }
     
     func makeSUT() -> (PodcastsListViewController, LoaderSpy){
