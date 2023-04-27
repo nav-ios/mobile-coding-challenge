@@ -91,6 +91,26 @@ final class PodcastFeediOSTests: XCTestCase {
         }
     }
     
+    
+    func test_viewDidLoad_showsFavouriteLabel(){
+        let (sut, loader) = makeSUT()
+        sut.loadViewIfNeeded()
+        
+        let podcast1 = makePodcast(title: "Title 1", description: "Description 1", isFavourite: true)
+        let podcast2 = makePodcast(title: "Title 2", description: "Description 2", isFavourite: false)
+        
+        loader.completeLoading([podcast1, podcast2])
+        
+        DispatchQueue.main.async {
+            XCTAssertEqual(sut.numberOfLoadedCells(), 2)
+            let view1 = sut.podcastView(at: 0)
+            XCTAssertEqual(view1?.labelFavorite.isHidden, false)
+            
+            let view2 = sut.podcastView(at: 1)
+            XCTAssertEqual(view2?.labelFavorite.isHidden, true)
+        }
+        
+    }
     func test_viewDidLoad_invokesImageLoaderOncellCreation(){
         let (sut, loader) = makeSUT()
         sut.loadViewIfNeeded()
@@ -130,8 +150,12 @@ final class PodcastFeediOSTests: XCTestCase {
 
     }
     
-    func makePodcast(title: String, description: String) -> Podcast{
-        Podcast(title: title, description: description, id: UUID().uuidString, imageURL: anyURL(), thumbnailURL: anyURL(), publisher: "Some publisher")
+func makePodcast(title: String, description: String, isFavourite: Bool = false) -> Podcast{
+    let id = UUID().uuidString
+    if isFavourite{
+        UserDefaults.standard.set(true, forKey: id)
+    }
+       return Podcast(title: title, description: description, id: id, imageURL: anyURL(), thumbnailURL: anyURL(), publisher: "Some publisher")
     }
     
     private func anyURL() -> URL{
