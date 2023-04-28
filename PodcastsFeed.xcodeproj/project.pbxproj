@@ -323,14 +323,14 @@
 		59DDE97E29F9B2C600849E6F /* PodcastsFeed */ = {
 			isa = PBXGroup;
 			children = (
+				59DDE98A29F9B2C600849E6F /* LaunchScreen.storyboard */,
 				59DDE97F29F9B2C600849E6F /* AppDelegate.swift */,
 				59DDE98129F9B2C600849E6F /* SceneDelegate.swift */,
+				59DDE98529F9B2C600849E6F /* Main.storyboard */,
 				5948F02E29FAD192003C2EDD /* View Controllers */,
 				5934236C29FA4FD90048CAED /* Views */,
-				59DDE9AF29F9B33600849E6F /* Feed Files */,
-				59DDE98529F9B2C600849E6F /* Main.storyboard */,
+				59DDE9AF29F9B33600849E6F /* Loader Files */,
 				59DDE98829F9B2C600849E6F /* Assets.xcassets */,
-				59DDE98A29F9B2C600849E6F /* LaunchScreen.storyboard */,
 				59DDE98D29F9B2C600849E6F /* Info.plist */,
 			);
 			path = PodcastsFeed;
@@ -355,13 +355,13 @@
 			path = PodcastsFeedUITests;
 			sourceTree = "<group>";
 		};
-		59DDE9AF29F9B33600849E6F /* Feed Files */ = {
+		59DDE9AF29F9B33600849E6F /* Loader Files */ = {
 			isa = PBXGroup;
 			children = (
 				59DDE9B429F9B35000849E6F /* Podcast Models */,
 				59DDE9B029F9B34F00849E6F /* Podcast Protocol */,
 			);
-			path = "Feed Files";
+			path = "Loader Files";
 			sourceTree = "<group>";
 		};
 		59DDE9B029F9B34F00849E6F /* Podcast Protocol */ = {
