@@ -21,6 +21,7 @@
 		59DD1A0C29FBAD1800510298 /* HTMLAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DD1A0B29FBAD1800510298 /* HTMLAttributedString.swift */; };
 		59DD1A0E29FBB6E500510298 /* PodcastsListViewControllerFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DD1A0D29FBB6E500510298 /* PodcastsListViewControllerFooterView.swift */; };
 		59DD1A1029FBB6FA00510298 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DD1A0F29FBB6FA00510298 /* Pagination.swift */; };
+		59DD1A1329FBC68D00510298 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DD1A1229FBC68D00510298 /* ImageLoader.swift */; };
 		59DDE98029F9B2C600849E6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DDE97F29F9B2C600849E6F /* AppDelegate.swift */; };
 		59DDE98229F9B2C600849E6F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DDE98129F9B2C600849E6F /* SceneDelegate.swift */; };
 		59DDE98429F9B2C600849E6F /* PodcastsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DDE98329F9B2C600849E6F /* PodcastsListViewController.swift */; };
@@ -104,6 +105,7 @@
 		59DD1A0B29FBAD1800510298 /* HTMLAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLAttributedString.swift; sourceTree = "<group>"; };
 		59DD1A0D29FBB6E500510298 /* PodcastsListViewControllerFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastsListViewControllerFooterView.swift; sourceTree = "<group>"; };
 		59DD1A0F29FBB6FA00510298 /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
+		59DD1A1229FBC68D00510298 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		59DDE97C29F9B2C600849E6F /* PodcastsFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodcastsFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59DDE97F29F9B2C600849E6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59DDE98129F9B2C600849E6F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -263,6 +265,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		59DD1A1129FBC66A00510298 /* Image Loader */ = {
+			isa = PBXGroup;
+			children = (
+				59EAD59A29FA5DCA0086DDC1 /* URLSessionImageLoader.swift */,
+				59DD1A1229FBC68D00510298 /* ImageLoader.swift */,
+			);
+			path = "Image Loader";
+			sourceTree = "<group>";
+		};
 		59DDE97329F9B2C600849E6F = {
 			isa = PBXGroup;
 			children = (
@@ -331,10 +342,6 @@
 			children = (
 				59DDE9B429F9B35000849E6F /* Podcast Models */,
 				59DDE9B029F9B34F00849E6F /* Podcast Protocol */,
-				59DDE9B229F9B34F00849E6F /* PodcastLoader.swift */,
-				59DDE9B629F9B35000849E6F /* PodcastLoaderAPI.swift */,
-				59DDE9B329F9B35000849E6F /* RemotePodcastClient.swift */,
-				59EAD59A29FA5DCA0086DDC1 /* URLSessionImageLoader.swift */,
 			);
 			path = "Feed Files";
 			sourceTree = "<group>";
@@ -342,7 +349,11 @@
 		59DDE9B029F9B34F00849E6F /* Podcast Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				59DD1A1129FBC66A00510298 /* Image Loader */,
 				59DDE9B129F9B34F00849E6F /* PodcastClient.swift */,
+				59DDE9B629F9B35000849E6F /* PodcastLoaderAPI.swift */,
+				59DDE9B229F9B34F00849E6F /* PodcastLoader.swift */,
+				59DDE9B329F9B35000849E6F /* RemotePodcastClient.swift */,
 			);
 			path = "Podcast Protocol";
 			sourceTree = "<group>";
@@ -698,6 +709,7 @@
 				5934236629FA46040048CAED /* PodcastLoaderViewController.swift in Sources */,
 				59DD1A0E29FBB6E500510298 /* PodcastsListViewControllerFooterView.swift in Sources */,
 				59DDE9B729F9B35000849E6F /* PodcastClient.swift in Sources */,
+				59DD1A1329FBC68D00510298 /* ImageLoader.swift in Sources */,
 				59DD1A0C29FBAD1800510298 /* HTMLAttributedString.swift in Sources */,
 				59F2FFA529FA81E0001EDA7C /* PodcastDetailViewController.swift in Sources */,
 				5934236829FA47910048CAED /* PodcastCellController.swift in Sources */,

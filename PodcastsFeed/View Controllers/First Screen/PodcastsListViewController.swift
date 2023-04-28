@@ -6,10 +6,7 @@
 //
 
 import UIKit
-public protocol ImageLoader{
-    
-    func loadImageData(from url: URL, completion: @escaping (Result<Data, Error>) -> Void)
-}
+
 class PodcastsListViewController: UITableViewController{
     var podcastLoader: PodcastLoaderViewController?
     private var imageLoader = URLSessionImageLoader()

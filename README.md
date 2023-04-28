@@ -43,7 +43,7 @@ You will be building a simple two-screen podcasts app. A basic mockup is provide
 - ✅ Show a list of podcasts using the endpoint provided below.
 - ✅ Each list item should show the podcast thumbnail, title, and publisher name.
 - ✅ Leave some space for the "Favourited" label (refer to the second podcast in the list in the mockup above).
-- [ ] Show the Favourited label only if the podcast has been favourited, otherwise hide the label.
+- ✅ Show the Favourited label only if the podcast has been favourited, otherwise hide the label.
 
 #### Screen 2
 
@@ -58,8 +58,8 @@ You will be building a simple two-screen podcasts app. A basic mockup is provide
 - ✅ Fork this repo and keep it public until we've been able to review it.
 - ✅ Can be written in either Java or Kotlin for Android applicants, and Objective-C or Swift for iOS applicants.
 - ✅ For the API, use data provided by Listen Notes:
-     - [ ] Use the following endpoint to fetch podcast data: https://www.listennotes.com/api/docs/?lang=kotlin&test=1#get-api-v2-best_podcasts
-     - [ ] No API key required, you can simply use the mock server to fetch test data. [More information here](https://www.listennotes.help/article/48-how-to-test-the-podcast-api-without-an-api-key "More information here").
+     - ✅ Use the following endpoint to fetch podcast data: https://www.listennotes.com/api/docs/?lang=kotlin&test=1#get-api-v2-best_podcasts
+     - ✅ No API key required, you can simply use the mock server to fetch test data. [More information here](https://www.listennotes.help/article/48-how-to-test-the-podcast-api-without-an-api-key "More information here").
 - ✅ Focus on implementing the app in portrait orientation only.
 - ✅ The list should support pagination, loading 10 items at a time.
 
