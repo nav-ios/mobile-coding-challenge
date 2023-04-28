@@ -37,6 +37,7 @@ class PodcastCache{
 
 class CacheStore{
     var arrayCompletion = [(Bool) -> Void]()
+    
     func checkForFavourite(_ id: String, completion: @escaping (Bool) -> Void){
         arrayCompletion.append(completion)
     }

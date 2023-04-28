@@ -15,6 +15,13 @@ App makes a request to the backend -> If response is succeess -> Decodes data ->
 -> If request is not succesful -> Shows an error message
 ```
 
+```
+For persistent store, I have implemented a very simple solution using UserDefaults. 
+I am currently working on abstracting this to a protocol so we can easily replace
+UserDefaults with any other solution. Currently testing Cache Store and building 
+it following TDD process.
+```
+
 ## Testing Pointer #1:
 - ✅ Assert that `PodcastLoader` doesn't make a request to client on init
 - ✅ Assert that `PodcastLoader` only makes request to client on `load` invocation
