@@ -20,8 +20,10 @@ class PodcastCache{
         self.cacheStore = cacheStore
     }
     
-    func addToFavourite(podcastID: String, completion: (PodcastCacheResult) -> Void){
-        
+    func addToFavourite(podcastID: String, completion: @escaping (PodcastCacheResult) -> Void){
+        cacheStore.addToFavourite(podcastID){ result in
+            completion(.success(true))
+        }
     }
     func isFavourite(podcastID: String, completion: @escaping (PodcastCacheResult) -> Void){
         cacheStore.checkForFavourite(podcastID){ result in
@@ -47,6 +49,9 @@ class CacheStore{
         arrayCompletion.append(completion)
     }
     
+    func addToFavourite(_ id: String, completion: @escaping (CacheStoreResult) -> Void){
+        arrayCompletion.append(completion)
+    }
     func completeWith(error: Error?, message: Bool? = nil, at index: Int = 0){
         if error == nil{
             arrayCompletion[index](.success(message!))
@@ -92,6 +97,24 @@ final class PodcastCacheTests: XCTestCase {
         }
         
         store.completeWith(error: anyError(), message: nil)
+        wait(for: [exp], timeout: 1.0)
+    }
+    
+    func test_addToFavourite_succeedsSuccesfulyWhenPodcastIsNotAlreadyFavourite(){
+        let (sut, store) = makeSUT()
+        let podcast = makePodcast(title: "iPhone Podcast", description: "Tim Cook delivers WWDC 2023")
+        let exp = expectation(description: "Wait for store")
+        sut.addToFavourite(podcastID: podcast.id) { result in
+            switch result{
+            case let .success(isSaved):
+                XCTAssertTrue(isSaved)
+            case .failure(_):
+                XCTFail("Expected success got failure")
+            }
+            exp.fulfill()
+        }
+        
+        store.completeWith(error: nil, message: true)
         wait(for: [exp], timeout: 1.0)
     }
     func makeSUT() -> (PodcastCache, CacheStore){
