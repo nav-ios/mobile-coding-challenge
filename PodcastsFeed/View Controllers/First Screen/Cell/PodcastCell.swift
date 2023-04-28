@@ -16,7 +16,7 @@ class PodcastCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        imageThumnail.layer.cornerRadius = 40
+        imageThumnail.layer.cornerRadius = 20
         // Initialization code
     }
 
