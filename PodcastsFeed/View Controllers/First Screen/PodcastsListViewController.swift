@@ -17,6 +17,7 @@ class PodcastsListViewController: UITableViewController{
         didSet{
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                self.tableView.tableFooterView = self.loadMoreView()
                 self.tableView.refreshControl = nil
             }
         }
@@ -30,9 +31,11 @@ class PodcastsListViewController: UITableViewController{
         refreshControl?.beginRefreshing()
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
     }
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayTable.count
     }
@@ -77,9 +80,4 @@ extension PodcastsListViewController{
     }
 }
 
-struct Pagination{
-    static var canLoadMore: Bool{
-        return offSet > 0
-    }
-    static var offSet = 0
-}
+

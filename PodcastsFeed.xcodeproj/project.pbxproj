@@ -19,6 +19,8 @@
 		59CA223929F9B94200CA6CEE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 59CA223829F9B94200CA6CEE /* README.md */; };
 		59CA223B29F9BECE00CA6CEE /* PodcastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CA223A29F9BECE00CA6CEE /* PodcastCell.swift */; };
 		59DD1A0C29FBAD1800510298 /* HTMLAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DD1A0B29FBAD1800510298 /* HTMLAttributedString.swift */; };
+		59DD1A0E29FBB6E500510298 /* PodcastsListViewControllerFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DD1A0D29FBB6E500510298 /* PodcastsListViewControllerFooterView.swift */; };
+		59DD1A1029FBB6FA00510298 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DD1A0F29FBB6FA00510298 /* Pagination.swift */; };
 		59DDE98029F9B2C600849E6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DDE97F29F9B2C600849E6F /* AppDelegate.swift */; };
 		59DDE98229F9B2C600849E6F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DDE98129F9B2C600849E6F /* SceneDelegate.swift */; };
 		59DDE98429F9B2C600849E6F /* PodcastsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DDE98329F9B2C600849E6F /* PodcastsListViewController.swift */; };
@@ -100,6 +102,8 @@
 		59CA223829F9B94200CA6CEE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		59CA223A29F9BECE00CA6CEE /* PodcastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastCell.swift; sourceTree = "<group>"; };
 		59DD1A0B29FBAD1800510298 /* HTMLAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLAttributedString.swift; sourceTree = "<group>"; };
+		59DD1A0D29FBB6E500510298 /* PodcastsListViewControllerFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastsListViewControllerFooterView.swift; sourceTree = "<group>"; };
+		59DD1A0F29FBB6FA00510298 /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		59DDE97C29F9B2C600849E6F /* PodcastsFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodcastsFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59DDE97F29F9B2C600849E6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59DDE98129F9B2C600849E6F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -234,6 +238,8 @@
 				5934236929FA4EA10048CAED /* Composers */,
 				59DD1A0A29FB96F900510298 /* Cell */,
 				59DDE98329F9B2C600849E6F /* PodcastsListViewController.swift */,
+				59DD1A0F29FBB6FA00510298 /* Pagination.swift */,
+				59DD1A0D29FBB6E500510298 /* PodcastsListViewControllerFooterView.swift */,
 				5934236529FA46040048CAED /* PodcastLoaderViewController.swift */,
 			);
 			path = "First Screen";
@@ -681,6 +687,7 @@
 				59DDE9BB29F9B35000849E6F /* PodcastLoaderAPI.swift in Sources */,
 				59DDE98429F9B2C600849E6F /* PodcastsListViewController.swift in Sources */,
 				5934236B29FA4EC10048CAED /* PodcastListsComposer.swift in Sources */,
+				59DD1A1029FBB6FA00510298 /* Pagination.swift in Sources */,
 				59EAD59B29FA5DCA0086DDC1 /* URLSessionImageLoader.swift in Sources */,
 				59DDE9BA29F9B35000849E6F /* Podcast.swift in Sources */,
 				59DDE98029F9B2C600849E6F /* AppDelegate.swift in Sources */,
@@ -689,6 +696,7 @@
 				59DDE9B829F9B35000849E6F /* PodcastLoader.swift in Sources */,
 				59CA223B29F9BECE00CA6CEE /* PodcastCell.swift in Sources */,
 				5934236629FA46040048CAED /* PodcastLoaderViewController.swift in Sources */,
+				59DD1A0E29FBB6E500510298 /* PodcastsListViewControllerFooterView.swift in Sources */,
 				59DDE9B729F9B35000849E6F /* PodcastClient.swift in Sources */,
 				59DD1A0C29FBAD1800510298 /* HTMLAttributedString.swift in Sources */,
 				59F2FFA529FA81E0001EDA7C /* PodcastDetailViewController.swift in Sources */,

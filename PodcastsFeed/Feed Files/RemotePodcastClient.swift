@@ -11,8 +11,8 @@ import PodcastAPI
 public class RemotePodcastClient: PodcastClient{
     
     public func getPodcasts(completion: @escaping (PodcastClientResult) -> Void) {
-//        let apiKey = "58f6952f07d04062b5e2581ad61f134c"
-        let apiKey = ""
+        let apiKey = "58f6952f07d04062b5e2581ad61f134c"
+//        let apiKey = ""
         let client = PodcastAPI.Client(apiKey: apiKey)
         var parameters: [String: String] = [:]
         parameters["q"] = "star wars"
