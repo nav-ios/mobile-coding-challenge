@@ -44,7 +44,7 @@ class CacheStore{
     
     func completeWith(error: Error?, message: Bool, at index: Int = 0){
         if error == nil{
-            arrayCompletion[index](true)
+            arrayCompletion[index](message)
         }else{
             arrayCompletion[index](false)
         }
@@ -66,8 +66,9 @@ final class PodcastCacheTests: XCTestCase {
             }
             exp.fulfill()
         }
-        wait(for: [exp], timeout: 1.0)
         store.completeWith(error: nil, message: false)
+        wait(for: [exp], timeout: 1.0)
+
         
     }
     
