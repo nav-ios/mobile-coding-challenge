@@ -16,7 +16,7 @@ App makes a request to the backend -> If response is succeess -> Decodes data ->
 ```
 
 ```
-For persistent store, I have implemented a very simple solution using UserDefaults. 
+For persistence store, I have implemented a very simple solution using UserDefaults. 
 I am currently working on abstracting this to a protocol to 
 inverse dependency on frameworks so we can easily replace
 UserDefaults with any other solution. Currently testing Cache Store and building 
