@@ -16,13 +16,17 @@ public class PodcastListsComposer{
         
         let podcastController = storyBoard.instantiateInitialViewController() as! PodcastsListViewController
         podcastController.podcastLoader = podcastLoader
-        podcastLoader.onLoad = { [weak podcastController] arrayPodcasts in
+        podcastLoader.onLoad = transformPodcastsToCellControllers(for: podcastController, imageLoader: imageLoader)
+        let navigationController = UINavigationController(rootViewController: podcastController)
+
+        return navigationController
+    }
+    
+    static func transformPodcastsToCellControllers(for podcastController: PodcastsListViewController, imageLoader: ImageLoader) -> ([Podcast]) -> Void {
+        return { [weak podcastController] arrayPodcasts in
             podcastController?.arrayTable = arrayPodcasts.map{ podcast in
                 PodcastCellController(imageLoader: imageLoader, model: podcast)
             }
         }
-        let navigationController = UINavigationController(rootViewController: podcastController)
-
-        return navigationController
     }
 }

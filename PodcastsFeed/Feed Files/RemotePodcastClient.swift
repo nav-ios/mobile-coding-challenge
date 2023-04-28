@@ -14,8 +14,8 @@ public class RemotePodcastClient: PodcastClient{
         let apiKey = "58f6952f07d04062b5e2581ad61f134c"
         let client = PodcastAPI.Client(apiKey: apiKey)
         var parameters: [String: String] = [:]
-        parameters["genre_id"] = "93"
-        parameters["page"] = "8"
+        parameters["q"] = "tech"
+        parameters["offset"] = "20"
     
 
         client.search(parameters: parameters) { response in
