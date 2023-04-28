@@ -235,11 +235,10 @@
 		59DD1A0829FB8C4300510298 /* First Screen */ = {
 			isa = PBXGroup;
 			children = (
+				59DD1A1629FBC81500510298 /* Pagination */,
 				5934236929FA4EA10048CAED /* Composers */,
 				59DD1A0A29FB96F900510298 /* Cell */,
 				59DDE98329F9B2C600849E6F /* PodcastsListViewController.swift */,
-				59DD1A0F29FBB6FA00510298 /* Pagination.swift */,
-				59DD1A0D29FBB6E500510298 /* PodcastsListViewControllerFooterView.swift */,
 				5934236529FA46040048CAED /* PodcastLoaderViewController.swift */,
 			);
 			path = "First Screen";
@@ -288,6 +287,15 @@
 				59DDE9B229F9B34F00849E6F /* PodcastLoader.swift */,
 			);
 			path = "Podcast Loader";
+			sourceTree = "<group>";
+		};
+		59DD1A1629FBC81500510298 /* Pagination */ = {
+			isa = PBXGroup;
+			children = (
+				59DD1A0F29FBB6FA00510298 /* Pagination.swift */,
+				59DD1A0D29FBB6E500510298 /* PodcastsListViewControllerFooterView.swift */,
+			);
+			path = Pagination;
 			sourceTree = "<group>";
 		};
 		59DDE97329F9B2C600849E6F = {
