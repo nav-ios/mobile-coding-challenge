@@ -14,8 +14,8 @@ public class RemotePodcastClient: PodcastClient{
         let apiKey = "58f6952f07d04062b5e2581ad61f134c"
         let client = PodcastAPI.Client(apiKey: apiKey)
         var parameters: [String: String] = [:]
-        parameters["q"] = "tech"
-        parameters["offset"] = "20"
+        parameters["q"] = "star wars"
+        parameters["offset"] = String(Pagination.offSet)
     
 
         client.search(parameters: parameters) { response in
@@ -30,6 +30,7 @@ public class RemotePodcastClient: PodcastClient{
                 }
             } else {
                 if let data = response.toJson() {
+                    Pagination.offSet = data["next_offset"].intValue
                     completion(.success(data))
                 }
                 

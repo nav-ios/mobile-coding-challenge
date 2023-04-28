@@ -58,4 +58,27 @@ class PodcastsListViewController: UITableViewController{
         detailsVC.model = arrayTable[indexPath.row].model
         self.navigationController?.pushViewController(detailsVC, animated: true)
     }
+
+}
+
+extension PodcastsListViewController{
+    override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if scrolledToBottom(scrollView) && Pagination.canLoadMore{
+            podcastLoader?.load()
+        }
+    }
+    private func scrolledToBottom(_ scrollView: UIScrollView) -> Bool{
+        if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height) && scrollView ==  tableView
+        {
+            return true
+        }
+        return false
+    }
+}
+
+struct Pagination{
+    static var canLoadMore: Bool{
+        return offSet > 0
+    }
+    static var offSet = 0
 }

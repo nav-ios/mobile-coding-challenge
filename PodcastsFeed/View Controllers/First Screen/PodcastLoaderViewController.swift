@@ -15,12 +15,11 @@ final class PodcastLoaderViewController: NSObject{
     
      var view: UIRefreshControl = {
         let view = UIRefreshControl()
-        view.addTarget(self, action: #selector(load), for: .valueChanged)
+         view.addTarget(PodcastLoaderViewController.self, action: #selector(load), for: .valueChanged)
          return view
     }()
     
     var onLoad: (([Podcast]) -> Void)?
-    
      func load(){
         view.beginRefreshing()
         podcastLoader?.load(completion: { [weak self] result in

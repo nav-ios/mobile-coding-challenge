@@ -24,7 +24,7 @@ public class PodcastListsComposer{
     
     static func transformPodcastsToCellControllers(for podcastController: PodcastsListViewController, imageLoader: ImageLoader) -> ([Podcast]) -> Void {
         return { [weak podcastController] arrayPodcasts in
-            podcastController?.arrayTable = arrayPodcasts.map{ podcast in
+            podcastController?.arrayTable += arrayPodcasts.map{ podcast in
                 PodcastCellController(imageLoader: imageLoader, model: podcast)
             }
         }
