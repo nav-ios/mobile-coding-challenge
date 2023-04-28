@@ -283,6 +283,15 @@
 			path = "Podcast Client";
 			sourceTree = "<group>";
 		};
+		59DD1A1529FBC6F500510298 /* Podcast Loader */ = {
+			isa = PBXGroup;
+			children = (
+				59DDE9B629F9B35000849E6F /* PodcastLoaderAPI.swift */,
+				59DDE9B229F9B34F00849E6F /* PodcastLoader.swift */,
+			);
+			path = "Podcast Loader";
+			sourceTree = "<group>";
+		};
 		59DDE97329F9B2C600849E6F = {
 			isa = PBXGroup;
 			children = (
@@ -358,10 +367,9 @@
 		59DDE9B029F9B34F00849E6F /* Podcast Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				59DD1A1529FBC6F500510298 /* Podcast Loader */,
 				59DD1A1429FBC6BC00510298 /* Podcast Client */,
 				59DD1A1129FBC66A00510298 /* Image Loader */,
-				59DDE9B629F9B35000849E6F /* PodcastLoaderAPI.swift */,
-				59DDE9B229F9B34F00849E6F /* PodcastLoader.swift */,
 			);
 			path = "Podcast Protocol";
 			sourceTree = "<group>";
