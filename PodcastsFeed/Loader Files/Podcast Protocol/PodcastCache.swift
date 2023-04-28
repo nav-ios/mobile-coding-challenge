@@ -6,10 +6,11 @@
 //
 
 import Foundation
-enum PodcastCacheResult{
+public enum PodcastCacheResult{
     case success(Bool)
     case failure(Error)
 }
+
 protocol PodcastCache{
     
     func saveToCache(podcastID: String, completion: (PodcastCacheResult) -> Void)
