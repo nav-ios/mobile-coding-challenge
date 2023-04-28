@@ -17,6 +17,7 @@ class PodcastsListViewController: UITableViewController{
         didSet{
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                self.tableView.refreshControl = nil
             }
         }
     }

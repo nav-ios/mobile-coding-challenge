@@ -25,7 +25,7 @@ class PodcastDetailViewController: UIViewController {
         
         labelTitle.text = model?.title
         labelAuthor.text = model?.publisher
-        labelDescription.text = model?.description
+        labelDescription.attributedText = model?.description.htmlAttributedString()
         guard let imageURL = model?.imageURL else {return}
         imageLoader?.loadImageData(from: imageURL, completion: { [weak self] result in
             switch result{
