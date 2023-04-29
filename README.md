@@ -8,6 +8,10 @@
 ![Alt text](/Images/Podcasts-dependency-diagram.png "Audiobooks Overview")
 
 
+## Important:
+To run the project on a simulator or a device, select `PodcastViewControllerTests` target.
+To run tests, choose the appropriate test schemes. 
+
 ### TDD Flow:
 ```
 User launches app -> Expects to see latest podcasts fetched from internet
