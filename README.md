@@ -23,7 +23,7 @@ UserDefaults with any other solution. Currently testing Cache Store and building
 it following TDD process.
 ```
 
-## Persistence Store:
+##Persistence Store:
 - ✅ Details screen opened -> Checks if a podcast is favourited or not
 - ✅ Details screen opened -> User clicks on Favourite Button when podcast is not already favourited -> Saves to Favourite 
 and title changes to "Favourited"
