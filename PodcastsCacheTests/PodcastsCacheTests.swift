@@ -55,20 +55,28 @@ enum CacheStoreMessages{
     case favouriteAction
 }
 
-class CacheStore{
+protocol CacheStore{
+    func checkForFavourite(_ id: String, completion: @escaping (CacheStoreResult) -> Void)
+    func favouriteAction(_ id: String, completion: @escaping (CacheStoreResult) -> Void)
+
+
+}
+class CacheStoreSpy: CacheStore{
     var arrayCompletionCheckForFavourite = [(CacheStoreResult) -> Void]()
     var arrayCompletionFavouriteAction = [(CacheStoreResult) -> Void]()
     var recievedCallCount = 0
     var receivedMessages = [CacheStoreMessages]()
     
    
-    func checkForFavourite(_ id: String, completion: @escaping (CacheStoreResult) -> Void){
+    func checkForFavourite(_ id: String, completion: @escaping (CacheStoreResult) -> Void)
+    {
         recievedCallCount += 1
         receivedMessages.append(.checkForFavourite)
         arrayCompletionCheckForFavourite.append(completion)
     }
     
-    func favouriteAction(_ id: String, completion: @escaping (CacheStoreResult) -> Void){
+    func favouriteAction(_ id: String, completion: @escaping (CacheStoreResult) -> Void)
+    {
         arrayCompletionFavouriteAction.append(completion)
         receivedMessages.append(.favouriteAction)
     }
@@ -196,8 +204,8 @@ final class PodcastCacheTests: XCTestCase {
     }
 
     
-    func makeSUT() -> (PodcastCache, CacheStore){
-        let cacheStore = CacheStore()
+    func makeSUT() -> (PodcastCache, CacheStoreSpy){
+        let cacheStore = CacheStoreSpy()
         let sut = PodcastCache(cacheStore: cacheStore)
         return (sut, cacheStore)
     }
