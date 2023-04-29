@@ -16,11 +16,12 @@ App makes a request to the backend -> If response is succeess -> Decodes data ->
 ```
 
 ```
-For persistence store, I have implemented a very simple solution using UserDefaults. 
-I am currently working on abstracting this to a protocol to 
-inverse dependency on frameworks so we can easily replace
-UserDefaults with any other solution. Currently testing Cache Store and building 
-it following TDD process.
+For persistence store, I have created an abstract interface with a collaborator 
+which can be easily replaced by any framework that we want to use. 
+By using interface for persisting user favourite podcast, we can
+inverse the dependency on the framework that we want to use. 
+Currently I am using `UserDefaults` as the project requires only
+peristing the podcast's ID. 
 ```
 
 ## Persistence Store:
