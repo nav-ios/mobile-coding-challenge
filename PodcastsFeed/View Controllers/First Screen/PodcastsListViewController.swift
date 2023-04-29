@@ -19,14 +19,12 @@ class PodcastsListViewController: UITableViewController{
         }
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         refreshControl = podcastLoader?.view
         podcastLoader?.load()
         refreshControl?.beginRefreshing()
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
@@ -36,12 +34,10 @@ class PodcastsListViewController: UITableViewController{
         return arrayTable.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      
         return cellController(forRowAt: indexPath).view(in: tableView)
-        
     }
     
-    private func cellController(forRowAt indexPath: IndexPath) -> PodcastCellController{
+    private func cellController(forRowAt indexPath: IndexPath) -> PodcastCellController {
         arrayTable[indexPath.row]
     }
     
