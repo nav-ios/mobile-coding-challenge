@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import UIKit
 class PodcastDetailsViewComposer{
     static func composeDetailsViewWith(model: Podcast, imageLoader: ImageLoader){
         let bundle = Bundle(identifier: "com.heyhub.PodcastsFeed")
