@@ -11,6 +11,7 @@
 ## Important:
 To run the project on a simulator or a device, select `PodcastViewControllerTests` target.
 To run tests, choose the appropriate test schemes. 
+To run all the tests, choose CI scheme.
 
 ### TDD Flow:
 ```
