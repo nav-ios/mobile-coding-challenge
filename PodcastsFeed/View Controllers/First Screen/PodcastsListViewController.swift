@@ -15,7 +15,6 @@ class PodcastsListViewController: UITableViewController{
             DispatchQueue.main.async {
                 self.tableView.reloadData()
                 self.tableView.tableFooterView = self.loadMoreView()
-                self.tableView.refreshControl = nil
             }
         }
     }
