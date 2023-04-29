@@ -226,6 +226,31 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		591FB0AE29FD5F46008EDEEC /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				591FB0AF29FD5F54008EDEEC /* Implementation */,
+				59A1549A29FD247100EA0F29 /* CacheStore.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		591FB0AF29FD5F54008EDEEC /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				59A1549829FD1FC000EA0F29 /* UserDefaultsCacheStore.swift */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		591FB0B029FD5F63008EDEEC /* Collaborator */ = {
+			isa = PBXGroup;
+			children = (
+				59A1549429FD1E2C00EA0F29 /* PodcastCache.swift */,
+			);
+			path = Collaborator;
+			sourceTree = "<group>";
+		};
 		5934236929FA4EA10048CAED /* Composers */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,9 +298,8 @@
 		59A1549329FD1DDD00EA0F29 /* Cache Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				59A1549429FD1E2C00EA0F29 /* PodcastCache.swift */,
-				59A1549829FD1FC000EA0F29 /* UserDefaultsCacheStore.swift */,
-				59A1549A29FD247100EA0F29 /* CacheStore.swift */,
+				591FB0AE29FD5F46008EDEEC /* Protocol */,
+				591FB0B029FD5F63008EDEEC /* Collaborator */,
 			);
 			path = "Cache Protocol";
 			sourceTree = "<group>";
