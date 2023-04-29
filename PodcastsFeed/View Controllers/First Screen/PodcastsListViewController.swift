@@ -53,10 +53,7 @@ class PodcastsListViewController: UITableViewController{
         arrayTable[indexPath.row].releaseCell()
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailsVC = self.storyboard?.instantiateViewController(identifier: "PodcastDetailViewController") as! PodcastDetailViewController
-        detailsVC.imageLoader = imageLoader
-        detailsVC.model = arrayTable[indexPath.row].model
-        self.navigationController?.pushViewController(detailsVC, animated: true)
+        PodcastDetailsViewComposer.composeDetailsViewWith(model: arrayTable[indexPath.row].model, imageLoader: imageLoader)
     }
 
 }
