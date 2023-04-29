@@ -7,6 +7,11 @@
 
 import Foundation
 
+public enum PodcastCacheResult{
+    case success(Bool)
+    case failure(Error)
+}
+
 class PodcastCache{
     
     private var cacheStore: CacheStore
@@ -23,9 +28,9 @@ class PodcastCache{
                 let error = NSError(domain: "Something unexpected happened", code: 10)
                 completion(.failure(error))
             }
-            
         }
     }
+    
     func isFavourite(podcastID: String, completion: @escaping (Bool) -> Void){
         cacheStore.checkForFavourite(podcastID) { result in
             switch result{
@@ -34,7 +39,6 @@ class PodcastCache{
             case .failure:
                 completion(false)
             }
-            
         }
     }
 }
