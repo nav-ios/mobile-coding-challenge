@@ -8,58 +8,8 @@
 import XCTest
 @testable import PodcastsFeed
 
-public enum PodcastCacheResult{
-    case success(Bool)
-    case failure(Error)
-}
 
 
-
-enum CacheStoreResult{
-    case success(Bool)
-    case failure
-}
-
-enum CacheStoreMessages{
-    case checkForFavourite
-    case favouriteAction
-}
-
-protocol CacheStore{
-    func checkForFavourite(_ id: String, completion: @escaping (CacheStoreResult) -> Void)
-    func favouriteAction(_ id: String, completion: @escaping (CacheStoreResult) -> Void)
-
-
-}
-class CacheStoreSpy: CacheStore{
-    var arrayCompletionCheckForFavourite = [(CacheStoreResult) -> Void]()
-    var arrayCompletionFavouriteAction = [(CacheStoreResult) -> Void]()
-    var recievedCallCount = 0
-    var receivedMessages = [CacheStoreMessages]()
-    
-   
-    func checkForFavourite(_ id: String, completion: @escaping (CacheStoreResult) -> Void)
-    {
-        recievedCallCount += 1
-        receivedMessages.append(.checkForFavourite)
-        arrayCompletionCheckForFavourite.append(completion)
-    }
-    
-    func favouriteAction(_ id: String, completion: @escaping (CacheStoreResult) -> Void)
-    {
-        arrayCompletionFavouriteAction.append(completion)
-        receivedMessages.append(.favouriteAction)
-    }
-    
-    func completefavouriteCheckWith(message: Bool, at index: Int = 0){
-        arrayCompletionCheckForFavourite[index](.success(message))
-        
-    }
-    func completeFavouriteAction(error: Error?, message: Bool, at index: Int = 0){
-        arrayCompletionFavouriteAction[index](.success(message))
-    }
-    
-}
 
 final class PodcastCacheTests: XCTestCase {
 
@@ -193,5 +143,41 @@ final class PodcastCacheTests: XCTestCase {
     
     private func anyURL() -> URL{
         URL(string: "http://any-podcast-url.com")!
+    }
+    
+    
+    
+    enum CacheStoreMessages{
+        case checkForFavourite
+        case favouriteAction
+    }
+    class CacheStoreSpy: CacheStore{
+        var arrayCompletionCheckForFavourite = [(CacheStoreResult) -> Void]()
+        var arrayCompletionFavouriteAction = [(CacheStoreResult) -> Void]()
+        var recievedCallCount = 0
+        var receivedMessages = [CacheStoreMessages]()
+        
+       
+        func checkForFavourite(_ id: String, completion: @escaping (CacheStoreResult) -> Void)
+        {
+            recievedCallCount += 1
+            receivedMessages.append(.checkForFavourite)
+            arrayCompletionCheckForFavourite.append(completion)
+        }
+        
+        func favouriteAction(_ id: String, completion: @escaping (CacheStoreResult) -> Void)
+        {
+            arrayCompletionFavouriteAction.append(completion)
+            receivedMessages.append(.favouriteAction)
+        }
+        
+        func completefavouriteCheckWith(message: Bool, at index: Int = 0){
+            arrayCompletionCheckForFavourite[index](.success(message))
+            
+        }
+        func completeFavouriteAction(error: Error?, message: Bool, at index: Int = 0){
+            arrayCompletionFavouriteAction[index](.success(message))
+        }
+        
     }
 }
