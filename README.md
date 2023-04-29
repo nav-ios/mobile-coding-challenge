@@ -27,6 +27,8 @@ it following TDD process.
 - ✅ Details screen opened -> Checks if a podcast is favourited or not
 - ✅ Details screen opened -> User clicks on Favourite Button when podcast is not already favourited -> Saves to Favourite 
 and title changes to "Favourited"
+- ✅ Details screen opened -> User clicks on Favourite button when podcast is already favourited -> Removes from Favourite
+
 
 ## Testing Pointer #1:
 - ✅ Assert that `PodcastLoader` doesn't make a request to client on init
