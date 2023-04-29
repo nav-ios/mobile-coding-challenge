@@ -22,7 +22,6 @@ class PodcastDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewObjects()
-        podcastCache = PodcastCache(cacheStore: UserDefaultsCacheStore())
         checkFavourite()
 
         labelTitle.text = model?.title
