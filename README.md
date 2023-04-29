@@ -88,9 +88,9 @@ You will be building a simple two-screen podcasts app. A basic mockup is provide
 
 Your code will be evaluated based on the following criteria:
 
-- [ ] The code should compile.
-- [ ] No crashes, bugs, or compiler warnings.
-- [ ] App operates as outlined above.
-- [ ] Conforms to modern development principles.
-- [ ] Code is easy to understand. Bonus points for documentation.
-- [ ] Commit history is consistent, easy to follow and understand.
+- [X] The code should compile.
+- [X] No crashes, bugs, or compiler warnings.
+- [X] App operates as outlined above.
+- [X] Conforms to modern development principles.
+- [X] Code is easy to understand. Bonus points for documentation.
+- [X] Commit history is consistent, easy to follow and understand.
