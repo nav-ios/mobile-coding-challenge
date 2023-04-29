@@ -43,26 +43,35 @@ enum CacheStoreResult{
     case failure
 }
 
+enum CacheStoreMessages{
+    case checkForFavourite
+    case favouriteAction
+}
+
 class CacheStore{
     var arrayCompletionCheckForFavourite = [(CacheStoreResult) -> Void]()
     var arrayCompletionFavouriteAction = [(CacheStoreResult) -> Void]()
     var recievedCallCount = 0
+    var receivedMessages = [CacheStoreMessages]()
     
+   
     func checkForFavourite(_ id: String, completion: @escaping (CacheStoreResult) -> Void){
         recievedCallCount += 1
+        receivedMessages.append(.checkForFavourite)
         arrayCompletionCheckForFavourite.append(completion)
     }
     
     func favouriteAction(_ id: String, completion: @escaping (CacheStoreResult) -> Void){
         arrayCompletionFavouriteAction.append(completion)
+        receivedMessages.append(.favouriteAction)
     }
     
     func completefavouriteCheckWith(message: Bool, at index: Int = 0){
         arrayCompletionCheckForFavourite[index](.success(message))
         
     }
-    func completeFavouriteAction(error: Error?, message: Bool?, at index: Int = 0){
-        arrayCompletionFavouriteAction[index](.success(true))
+    func completeFavouriteAction(error: Error?, message: Bool, at index: Int = 0){
+        arrayCompletionFavouriteAction[index](.success(message))
     }
     
 }
@@ -115,9 +124,38 @@ final class PodcastCacheTests: XCTestCase {
         }
         store.completefavouriteCheckWith(message: true)
         wait(for: [exp], timeout: 1.0)
-
     }
     
+    func test_addToFavourite_completesWithSuccessTrue(){
+        let (sut, store) = makeSUT()
+        let podcast = makePodcast(title: "iPhone 15 Podcast", description: "iPhone 15 Launch event")
+        let exp = expectation(description: "Wait for store")
+        exp.expectedFulfillmentCount = 2
+        sut.isFavourite(podcastID: podcast.id) { result in
+            switch result{
+            case true:
+                XCTFail("Expected false")
+
+            case false:
+                break
+            }
+            exp.fulfill()
+        }
+        store.completefavouriteCheckWith(message: false)
+        
+        sut.addToFavourite(podcastID: podcast.id) { result in
+            switch result{
+            case let .success(isSaved):
+                XCTAssertTrue(isSaved)
+            case .failure(_):
+                XCTFail("Expected true")
+            }
+            exp.fulfill()
+        }
+        store.completeFavouriteAction(error: nil, message: true)
+        XCTAssertEqual(store.receivedMessages, [CacheStoreMessages.checkForFavourite, .favouriteAction])
+        wait(for: [exp], timeout: 1.0)
+    }
     
     
     
