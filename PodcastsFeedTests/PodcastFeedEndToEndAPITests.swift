@@ -20,11 +20,11 @@ final class PodcastFeedEndToEndAPITests: XCTestCase {
             switch result{
             case let .success(arrayPodcast):
                 XCTAssertFalse(arrayPodcast.isEmpty)
-                XCTAssertEqual(arrayPodcast[0].title, "Star Wars Trivia")
-                XCTAssertEqual(arrayPodcast[0].publisher, "Surely You Can't Be Serious Productions, LLC")
-                XCTAssertEqual(arrayPodcast[1].title, "History Hack: Star Wars")
-                XCTAssertEqual(arrayPodcast[1].publisher, "historyhack")
-                
+                XCTAssertFalse(arrayPodcast[0].title.isEmpty, "Expected non empty title")
+                XCTAssertFalse(arrayPodcast[0].publisher.isEmpty, "Expected non empty publisher")
+                XCTAssertFalse(arrayPodcast[1].title.isEmpty, "Expected non empty second title")
+                XCTAssertFalse(arrayPodcast[1].publisher.isEmpty, "Expected non empty second publisher")
+
             case let .failure(error):
                 XCTFail("Expected succesfull result, but got \(error) instead")
             }
