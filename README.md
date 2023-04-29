@@ -5,7 +5,7 @@
 
 # Audiobooks.com Dependency Diagram:
 
-![Alt text](/Images/AudioBooksDependencyDiagram.png "Audiobooks Overview")
+![Alt text](/Images/Podcasts-dependency-diagram.png "Audiobooks Overview")
 
 
 ### TDD Flow:
