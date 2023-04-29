@@ -23,6 +23,9 @@ UserDefaults with any other solution. Currently testing Cache Store and building
 it following TDD process.
 ```
 
+##Persistence Store:
+- Details screen opened -> Checks if a podcast is favourited or not
+
 ## Testing Pointer #1:
 - ✅ Assert that `PodcastLoader` doesn't make a request to client on init
 - ✅ Assert that `PodcastLoader` only makes request to client on `load` invocation
