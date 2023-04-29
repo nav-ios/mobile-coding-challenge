@@ -49,7 +49,7 @@ class PodcastsListViewController: UITableViewController{
         arrayTable[indexPath.row].releaseCell()
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        PodcastDetailsViewComposer.composeDetailsViewWith(model: arrayTable[indexPath.row].model, imageLoader: imageLoader)
+        PodcastDetailsViewComposer.composeDetailsViewWith(model: arrayTable[indexPath.row].model, imageLoader: imageLoader, for: self.navigationController!)
     }
 
 }

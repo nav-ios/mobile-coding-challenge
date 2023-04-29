@@ -8,14 +8,13 @@
 import Foundation
 import UIKit
 class PodcastDetailsViewComposer{
-    static func composeDetailsViewWith(model: Podcast, imageLoader: ImageLoader){
+    static func composeDetailsViewWith(model: Podcast, imageLoader: ImageLoader, for navigationController: UINavigationController){
         let bundle = Bundle(identifier: "com.heyhub.PodcastsFeed")
         let storyBoard = UIStoryboard(name: "Podcast", bundle: bundle)
         let detailsVC = storyBoard.instantiateViewController(withIdentifier: "PodcastDetailViewController") as! PodcastDetailViewController
         detailsVC.imageLoader = imageLoader
         detailsVC.model = model
-        let navigationController = UIApplication.shared.windows.first?.rootViewController as? UINavigationController
-        navigationController?.pushViewController(detailsVC, animated: true)
+        navigationController.pushViewController(detailsVC, animated: true)
         
     }
 }
