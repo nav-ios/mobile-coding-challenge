@@ -12,7 +12,7 @@ final class PodcastDetailsViewTests: XCTestCase {
     
     func test_viewDidLoad_doesnotDisplayFavouritedTitleOnButton(){
         let podcast = makePodcast(title: "Some Podcast", description: "Some description", isFavourite: false)
-        let (sut, loader) = makeSUT(with: podcast)
+        let (sut, loader, _) = makeSUT(with: podcast)
         sut.loadViewIfNeeded()
         XCTAssertEqual(sut.isFavourite, false)
         
@@ -21,7 +21,7 @@ final class PodcastDetailsViewTests: XCTestCase {
     
     func test_viewDidLoad_checksValuesOnLabel(){
         let podcast = makePodcast(title: "Some Podcast", description: "Some description", isFavourite: false)
-        let (sut, loader) = makeSUT(with: podcast)
+        let (sut, loader, _) = makeSUT(with: podcast)
         sut.loadViewIfNeeded()
         XCTAssertEqual(sut.isFavourite, false)
         XCTAssertEqual(sut.titlePodcast, podcast.title)
@@ -33,7 +33,7 @@ final class PodcastDetailsViewTests: XCTestCase {
     
     func test_loadsImageSuccessfullyFromBackend(){
         let podcast = makePodcast(title: "Star wars", description: "Star wars podcast")
-        let (sut, loader) = makeSUT(with: podcast)
+        let (sut, loader, _) = makeSUT(with: podcast)
         let imageStarWars = UIImage(named: "starwars.png")
         sut.loadViewIfNeeded()
         let exp = expectation(description: "wait for image to complete")
@@ -48,7 +48,7 @@ final class PodcastDetailsViewTests: XCTestCase {
     
     func test_loader_showsDefaultFallbackImageOnImageLoaderCompletingWithError(){
         let podcast = makePodcast(title: "Star wars", description: "Star wars podcast")
-        let (sut, loader) = makeSUT(with: podcast)
+        let (sut, loader, _) = makeSUT(with: podcast)
         let defaultImage = UIImage(systemName: "questionmark.app.fill")
         sut.loadViewIfNeeded()
         let exp = expectation(description: "wait for image to complete")
@@ -61,14 +61,30 @@ final class PodcastDetailsViewTests: XCTestCase {
         wait(for: [exp], timeout: 1)
     }
     
-   private func makeSUT(with model: Podcast) -> (PodcastDetailViewController, ImageLoaderSpy){
+    func test_viewDidLoad_showsFavouritedTitleOnButtonForFavouritePodcast(){
+        let podcast = makePodcast(title: "Star wars", description: "Star wars podcast", isFavourite: false)
+        let (sut, _, cache) = makeSUT(with: podcast)
+        sut.loadViewIfNeeded()
+        let exp = expectation(description: "wait for completion")
+        DispatchQueue.main.async {
+            XCTAssertEqual(sut.isFavourite, false)
+            exp.fulfill()
+        }
+        wait(for: [exp], timeout: 1)
+        cache.completeCheckForFavouriteWith(result: .success(false))
+    }
+    
+    private func makeSUT(with model: Podcast) -> (PodcastDetailViewController, ImageLoaderSpy, CacheStoreSpy){
         let storyboard = UIStoryboard(name: "Podcast", bundle: Bundle(identifier: "com.heyhub.PodcastsFeed"))
-                let sut = storyboard.instantiateViewController(identifier: "PodcastDetailViewController") as! PodcastDetailViewController
+        let sut = storyboard.instantiateViewController(identifier: "PodcastDetailViewController") as! PodcastDetailViewController
         let imageLoaderSpy = ImageLoaderSpy()
         sut.imageLoader = imageLoaderSpy
+        let cacheStoreSpy = CacheStoreSpy()
+        let podcastSpy = PodcastCache(cacheStore: cacheStoreSpy)
+        sut.podcastCache = podcastSpy
         sut.model = model
-
-        return (sut, imageLoaderSpy)
+        
+        return (sut, imageLoaderSpy, cacheStoreSpy)
         
     }
     
@@ -86,6 +102,28 @@ final class PodcastDetailsViewTests: XCTestCase {
         func completeImageLoadingWith(data: Data, at index: Int = 0){
             arrayCompletion[index](.success(data))
         }
+        
+    }
+    
+    private class CacheStoreSpy: CacheStore{
+        var arrayCompletion = [(PodcastsFeed.CacheStoreResult) -> Void]()
+        func checkForFavourite(_ id: String, completion: @escaping (PodcastsFeed.CacheStoreResult) -> Void) {
+            arrayCompletion.append(completion)
+        }
+        
+        func favouriteAction(_ id: String, completion: @escaping (PodcastsFeed.CacheStoreResult) -> Void) {
+            arrayCompletion.append(completion)
+
+        }
+        
+        func completeCheckForFavouriteWith(result: PodcastsFeed.CacheStoreResult, at index: Int = 0){
+            arrayCompletion[index](result)
+        }
+        
+        func completefavouriteActionWith(result: PodcastsFeed.CacheStoreResult, at index: Int = 0){
+            arrayCompletion[index](result)
+        }
+        
         
     }
     func makePodcast(title: String, description: String, isFavourite: Bool = false) -> Podcast{
