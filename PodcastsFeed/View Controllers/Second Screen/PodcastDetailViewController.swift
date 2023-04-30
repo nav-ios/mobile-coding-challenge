@@ -28,7 +28,7 @@ class PodcastDetailViewController: UIViewController {
         labelAuthor.text = model?.publisher
         labelDescription.attributedText = model?.description.htmlAttributedString()
         guard let imageURL = model?.imageURL else {return}
-        imageLoader?.loadImageData(from: imageURL, completion: { [weak self] result in
+        imageLoader?.loadImageData(from: imageURL) { [weak self] result in
             switch result{
             case .success(let data):
                 DispatchQueue.main.async {
@@ -38,7 +38,7 @@ class PodcastDetailViewController: UIViewController {
                 
                 self?.imagePodcast.image = UIImage(named: "questionmark.app.fill")
             }
-        })
+        }
         // Do any additional setup after loading the view.
     }
     

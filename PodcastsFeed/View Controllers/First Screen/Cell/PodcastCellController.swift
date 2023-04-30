@@ -19,7 +19,6 @@ final class PodcastCellController{
         podcastCache = PodcastCache(cacheStore: UserDefaultsCacheStore())
     }
     
-    
     func view(in tableView: UITableView) -> UITableViewCell {
         cell = tableView.dequeueReusableCell(withIdentifier: "PodcastCell") as? PodcastCell
         cell?.labelTitle.text = model.title
