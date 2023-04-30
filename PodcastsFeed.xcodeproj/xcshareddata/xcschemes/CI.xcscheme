@@ -26,7 +26,18 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "YES">
+      <CodeCoverageTargets>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "59DDE97B29F9B2C600849E6F"
+            BuildableName = "PodcastsFeed.app"
+            BlueprintName = "PodcastsFeed"
+            ReferencedContainer = "container:PodcastsFeed.xcodeproj">
+         </BuildableReference>
+      </CodeCoverageTargets>
       <Testables>
          <TestableReference
             skipped = "NO"
@@ -77,18 +88,7 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "594AC64029FE27C300C681C1"
-               BuildableName = "UserDefaultsCacheStore.xctest"
-               BlueprintName = "UserDefaultsCacheStore"
-               ReferencedContainer = "container:PodcastsFeed.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "594AC64D29FE27F700C681C1"
+               BlueprintIdentifier = "594AC65A29FE301B00C681C1"
                BuildableName = "UserDefaultsCacheStoreTests.xctest"
                BlueprintName = "UserDefaultsCacheStoreTests"
                ReferencedContainer = "container:PodcastsFeed.xcodeproj">

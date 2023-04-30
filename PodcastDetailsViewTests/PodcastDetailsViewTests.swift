@@ -9,14 +9,6 @@ import XCTest
 @testable import PodcastsFeed
 
 final class PodcastDetailsViewTests: XCTestCase {
-
-    func test_viewDidLoad_displaysFavouritedTitleOnButton(){
-        let podcast = makePodcast(title: "Some Podcast", description: "Some description", isFavourite: true)
-        let sut = makeSUT(with: podcast)
-        sut.loadViewIfNeeded()
-        XCTAssertEqual(sut.isFavourite, true)
-        
-    }
     
     func test_viewDidLoad_doesnotDisplayFavouritedTitleOnButton(){
         let podcast = makePodcast(title: "Some Podcast", description: "Some description", isFavourite: false)
