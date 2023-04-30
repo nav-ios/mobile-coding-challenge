@@ -61,7 +61,7 @@ final class PodcastDetailsViewTests: XCTestCase {
         wait(for: [exp], timeout: 1)
     }
     
-    func test_viewDidLoad_showsFavouritedTitleOnButtonForFavouritePodcast(){
+    func test_viewDidLoad_showsFavouriteTitleOnButtonForNotFavouritePodcast(){
         let podcast = makePodcast(title: "Star wars", description: "Star wars podcast", isFavourite: false)
         let (sut, _, cache) = makeSUT(with: podcast)
         sut.loadViewIfNeeded()
@@ -73,6 +73,8 @@ final class PodcastDetailsViewTests: XCTestCase {
         wait(for: [exp], timeout: 1)
         cache.completeCheckForFavouriteWith(result: .success(false))
     }
+    
+    
     
     private func makeSUT(with model: Podcast) -> (PodcastDetailViewController, ImageLoaderSpy, CacheStoreSpy){
         let storyboard = UIStoryboard(name: "Podcast", bundle: Bundle(identifier: "com.heyhub.PodcastsFeed"))
