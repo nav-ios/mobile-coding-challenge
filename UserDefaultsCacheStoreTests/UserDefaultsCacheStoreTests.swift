@@ -23,6 +23,7 @@ final class UserDefaultsCacheStoreTests: XCTestCase {
             }
         }
     }
+    
     func test_checkForFavourite_returnsTrueAfterPodcastIsFavourited(){
         let sut = UserDefaultsCacheStore()
         let podcastID = makePodcastID()
@@ -40,7 +41,7 @@ final class UserDefaultsCacheStoreTests: XCTestCase {
             case let .success(isFav):
                 XCTAssertTrue(isFav)
             case .failure:
-                XCTFail("Expected success with false but got failure")
+                XCTFail("Expected success with true but got failure")
             }
         }
         
@@ -49,11 +50,48 @@ final class UserDefaultsCacheStoreTests: XCTestCase {
             case let .success(isFav):
                 XCTAssertTrue(isFav)
             case .failure:
+                XCTFail("Expected success with true but got failure")
+            }
+        }
+    }
+    func test_checkForFavourite_returnsFalseAfterPodcastIsFavouritedAndThenRemoved(){
+        let sut = UserDefaultsCacheStore()
+        let podcastID = makePodcastID()
+        sut.checkForFavourite(podcastID) { result in
+            switch result{
+            case let .success(isFav):
+                XCTAssertFalse(isFav)
+            case .failure:
                 XCTFail("Expected success with false but got failure")
             }
         }
         
+        sut.favouriteAction(podcastID) { result in
+            switch result{
+            case let .success(isFav):
+                XCTAssertTrue(isFav)
+            case .failure:
+                XCTFail("Expected success with true but got failure")
+            }
+        }
         
+        sut.checkForFavourite(podcastID) { result in
+            switch result{
+            case let .success(isFav):
+                XCTAssertTrue(isFav)
+            case .failure:
+                XCTFail("Expected success with true but got failure")
+            }
+        }
+        
+        sut.favouriteAction(podcastID) { result in
+            switch result{
+            case let .success(isFav):
+                XCTAssertFalse(isFav)
+            case .failure:
+                XCTFail("Expected success with false but got failure")
+            }
+        }
     }
     
     
