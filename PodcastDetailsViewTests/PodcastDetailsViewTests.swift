@@ -43,7 +43,22 @@ final class PodcastDetailsViewTests: XCTestCase {
             XCTAssertEqual(sut.imagePodcastData, imageStarWars?.pngData())
             exp.fulfill()
         }
-        wait(for: [exp], timeout: 5)
+        wait(for: [exp], timeout: 1)
+    }
+    
+    func test_loader_showsDefaultFallbackImageOnImageLoaderCompletingWithError(){
+        let podcast = makePodcast(title: "Star wars", description: "Star wars podcast")
+        let (sut, loader) = makeSUT(with: podcast)
+        let defaultImage = UIImage(systemName: "questionmark.app.fill")
+        sut.loadViewIfNeeded()
+        let exp = expectation(description: "wait for image to complete")
+        sut.imageLoader?.loadImageData(from: podcast.imageURL){_ in }
+        loader.completeImageLoadingWith(error: NSError(domain: "Failed to load image", code: 99))
+        DispatchQueue.main.async {
+            XCTAssertEqual(sut.imagePodcastData, defaultImage!.pngData())
+            exp.fulfill()
+        }
+        wait(for: [exp], timeout: 1)
     }
     
    private func makeSUT(with model: Podcast) -> (PodcastDetailViewController, ImageLoaderSpy){

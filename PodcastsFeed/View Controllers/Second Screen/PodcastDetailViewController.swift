@@ -36,7 +36,7 @@ class PodcastDetailViewController: UIViewController {
                 }
             case .failure(_):
                 
-                self?.imagePodcast.image = UIImage(named: "questionmark.app.fill")
+                self?.imagePodcast.image = UIImage(systemName: "questionmark.app.fill")
             }
         }
         // Do any additional setup after loading the view.
