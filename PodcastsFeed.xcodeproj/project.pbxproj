@@ -14,6 +14,7 @@
 		5934236829FA47910048CAED /* PodcastCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5934236729FA47910048CAED /* PodcastCellController.swift */; };
 		5934236B29FA4EC10048CAED /* PodcastListsComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5934236A29FA4EC10048CAED /* PodcastListsComposer.swift */; };
 		5934236E29FA4FE80048CAED /* Podcast.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5934236D29FA4FE80048CAED /* Podcast.storyboard */; };
+		594AC65129FE27F700C681C1 /* UserDefaultsCacheStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594AC65029FE27F700C681C1 /* UserDefaultsCacheStoreTests.swift */; };
 		598441B029FBCB1F00BB4C4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 598441AF29FBCB1F00BB4C4D /* Main.storyboard */; };
 		598441D729FC33B600BB4C4D /* PodcastsCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598441D629FC33B600BB4C4D /* PodcastsCacheTests.swift */; };
 		59A1549529FD1E2C00EA0F29 /* PodcastCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A1549429FD1E2C00EA0F29 /* PodcastCache.swift */; };
@@ -48,6 +49,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		594AC65229FE27F700C681C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 59DDE97429F9B2C600849E6F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 59DDE97B29F9B2C600849E6F;
+			remoteInfo = PodcastsFeed;
+		};
 		598441D829FC33B600BB4C4D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 59DDE97429F9B2C600849E6F /* Project object */;
@@ -109,6 +117,8 @@
 		5934236729FA47910048CAED /* PodcastCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastCellController.swift; sourceTree = "<group>"; };
 		5934236A29FA4EC10048CAED /* PodcastListsComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastListsComposer.swift; sourceTree = "<group>"; };
 		5934236D29FA4FE80048CAED /* Podcast.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Podcast.storyboard; sourceTree = "<group>"; };
+		594AC64E29FE27F700C681C1 /* UserDefaultsCacheStoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserDefaultsCacheStoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		594AC65029FE27F700C681C1 /* UserDefaultsCacheStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsCacheStoreTests.swift; sourceTree = "<group>"; };
 		598441AF29FBCB1F00BB4C4D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		598441D429FC33B600BB4C4D /* PodcastsCacheTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PodcastsCacheTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		598441D629FC33B600BB4C4D /* PodcastsCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastsCacheTests.swift; sourceTree = "<group>"; };
@@ -155,6 +165,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		594AC64B29FE27F700C681C1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		598441D129FC33B600BB4C4D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -276,6 +293,14 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
+		594AC64F29FE27F700C681C1 /* UserDefaultsCacheStoreTests */ = {
+			isa = PBXGroup;
+			children = (
+				594AC65029FE27F700C681C1 /* UserDefaultsCacheStoreTests.swift */,
+			);
+			path = UserDefaultsCacheStoreTests;
+			sourceTree = "<group>";
+		};
 		598441B129FBCBF700BB4C4D /* Default */ = {
 			isa = PBXGroup;
 			children = (
@@ -390,6 +415,7 @@
 				59F2FFAB29FA826F001EDA7C /* PodcastDetailsViewTests */,
 				59F2FFB929FA8658001EDA7C /* PodcastDetailsView */,
 				598441D529FC33B600BB4C4D /* PodcastsCacheTests */,
+				594AC64F29FE27F700C681C1 /* UserDefaultsCacheStoreTests */,
 				59DDE97D29F9B2C600849E6F /* Products */,
 				22704428C61BD7BA27281BD9 /* Pods */,
 				137DEF24C5386E352BF8C094 /* Frameworks */,
@@ -405,6 +431,7 @@
 				59CA222D29F9B5B000CA6CEE /* PodcastsListViewControllerTests.xctest */,
 				59F2FFAA29FA826F001EDA7C /* PodcastDetailsViewTests.xctest */,
 				598441D429FC33B600BB4C4D /* PodcastsCacheTests.xctest */,
+				594AC64E29FE27F700C681C1 /* UserDefaultsCacheStoreTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -489,6 +516,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		594AC64D29FE27F700C681C1 /* UserDefaultsCacheStoreTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 594AC65429FE27F700C681C1 /* Build configuration list for PBXNativeTarget "UserDefaultsCacheStoreTests" */;
+			buildPhases = (
+				594AC64A29FE27F700C681C1 /* Sources */,
+				594AC64B29FE27F700C681C1 /* Frameworks */,
+				594AC64C29FE27F700C681C1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				594AC65329FE27F700C681C1 /* PBXTargetDependency */,
+			);
+			name = UserDefaultsCacheStoreTests;
+			productName = UserDefaultsCacheStoreTests;
+			productReference = 594AC64E29FE27F700C681C1 /* UserDefaultsCacheStoreTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		598441D329FC33B600BB4C4D /* PodcastsCacheTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 598441DA29FC33B600BB4C4D /* Build configuration list for PBXNativeTarget "PodcastsCacheTests" */;
@@ -612,6 +657,10 @@
 				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
+					594AC64D29FE27F700C681C1 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 59DDE97B29F9B2C600849E6F;
+					};
 					598441D329FC33B600BB4C4D = {
 						CreatedOnToolsVersion = 14.1;
 						TestTargetID = 59DDE97B29F9B2C600849E6F;
@@ -657,11 +706,19 @@
 				59CA222C29F9B5B000CA6CEE /* PodcastsListViewControllerTests */,
 				59F2FFA929FA826F001EDA7C /* PodcastDetailsViewTests */,
 				598441D329FC33B600BB4C4D /* PodcastsCacheTests */,
+				594AC64D29FE27F700C681C1 /* UserDefaultsCacheStoreTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		594AC64C29FE27F700C681C1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		598441D229FC33B600BB4C4D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -816,6 +873,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		594AC64A29FE27F700C681C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				594AC65129FE27F700C681C1 /* UserDefaultsCacheStoreTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		598441D029FC33B600BB4C4D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -890,6 +955,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		594AC65329FE27F700C681C1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 59DDE97B29F9B2C600849E6F /* PodcastsFeed */;
+			targetProxy = 594AC65229FE27F700C681C1 /* PBXContainerItemProxy */;
+		};
 		598441D929FC33B600BB4C4D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 59DDE97B29F9B2C600849E6F /* PodcastsFeed */;
@@ -929,6 +999,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		594AC65529FE27F700C681C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4E59WA6F2N;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.heyhub.UserDefaultsCacheStoreTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PodcastsFeed.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PodcastsFeed";
+			};
+			name = Debug;
+		};
+		594AC65629FE27F700C681C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4E59WA6F2N;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.heyhub.UserDefaultsCacheStoreTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PodcastsFeed.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PodcastsFeed";
+			};
+			name = Release;
+		};
 		598441DB29FC33B600BB4C4D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1305,6 +1413,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		594AC65429FE27F700C681C1 /* Build configuration list for PBXNativeTarget "UserDefaultsCacheStoreTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				594AC65529FE27F700C681C1 /* Debug */,
+				594AC65629FE27F700C681C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		598441DA29FC33B600BB4C4D /* Build configuration list for PBXNativeTarget "PodcastsCacheTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

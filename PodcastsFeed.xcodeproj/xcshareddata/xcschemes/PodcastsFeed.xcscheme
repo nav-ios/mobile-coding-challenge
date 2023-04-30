@@ -94,6 +94,28 @@
                ReferencedContainer = "container:PodcastsFeed.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "594AC64029FE27C300C681C1"
+               BuildableName = "UserDefaultsCacheStore.xctest"
+               BlueprintName = "UserDefaultsCacheStore"
+               ReferencedContainer = "container:PodcastsFeed.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "594AC64D29FE27F700C681C1"
+               BuildableName = "UserDefaultsCacheStoreTests.xctest"
+               BlueprintName = "UserDefaultsCacheStoreTests"
+               ReferencedContainer = "container:PodcastsFeed.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
