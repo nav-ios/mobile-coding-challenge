@@ -287,6 +287,14 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
+		5946B40729FEAAD7006AA9BE /* Composer */ = {
+			isa = PBXGroup;
+			children = (
+				591FB0AB29FD5D52008EDEEC /* PodcastDetailsViewComposer.swift */,
+			);
+			path = Composer;
+			sourceTree = "<group>";
+		};
 		5948F02E29FAD192003C2EDD /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -355,9 +363,9 @@
 		59DD1A0929FB8C4E00510298 /* Second Screen */ = {
 			isa = PBXGroup;
 			children = (
+				5946B40729FEAAD7006AA9BE /* Composer */,
 				59F2FFA429FA81E0001EDA7C /* PodcastDetailViewController.swift */,
 				59DD1A0B29FBAD1800510298 /* HTMLAttributedString.swift */,
-				591FB0AB29FD5D52008EDEEC /* PodcastDetailsViewComposer.swift */,
 			);
 			path = "Second Screen";
 			sourceTree = "<group>";
