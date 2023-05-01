@@ -14,8 +14,6 @@
 		5934236829FA47910048CAED /* PodcastCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5934236729FA47910048CAED /* PodcastCellController.swift */; };
 		5934236B29FA4EC10048CAED /* PodcastListsComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5934236A29FA4EC10048CAED /* PodcastListsComposer.swift */; };
 		5934236E29FA4FE80048CAED /* Podcast.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5934236D29FA4FE80048CAED /* Podcast.storyboard */; };
-		5946B40529FE97A7006AA9BE /* starwars.png in Resources */ = {isa = PBXBuildFile; fileRef = 5946B40429FE97A7006AA9BE /* starwars.png */; };
-		5946B40629FE9915006AA9BE /* starwars.png in Resources */ = {isa = PBXBuildFile; fileRef = 5946B40429FE97A7006AA9BE /* starwars.png */; };
 		594AC65E29FE301B00C681C1 /* UserDefaultsCacheStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594AC65D29FE301B00C681C1 /* UserDefaultsCacheStoreTests.swift */; };
 		598441B029FBCB1F00BB4C4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 598441AF29FBCB1F00BB4C4D /* Main.storyboard */; };
 		598441D729FC33B600BB4C4D /* PodcastsCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598441D629FC33B600BB4C4D /* PodcastsCacheTests.swift */; };
@@ -121,7 +119,6 @@
 		5934236729FA47910048CAED /* PodcastCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastCellController.swift; sourceTree = "<group>"; };
 		5934236A29FA4EC10048CAED /* PodcastListsComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastListsComposer.swift; sourceTree = "<group>"; };
 		5934236D29FA4FE80048CAED /* Podcast.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Podcast.storyboard; sourceTree = "<group>"; };
-		5946B40429FE97A7006AA9BE /* starwars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = starwars.png; sourceTree = "<group>"; };
 		594AC65B29FE301B00C681C1 /* UserDefaultsCacheStoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserDefaultsCacheStoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		594AC65D29FE301B00C681C1 /* UserDefaultsCacheStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsCacheStoreTests.swift; sourceTree = "<group>"; };
 		598441AF29FBCB1F00BB4C4D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -460,7 +457,6 @@
 				5934236C29FA4FD90048CAED /* Storyboard */,
 				59DDE9AF29F9B33600849E6F /* Loader Files */,
 				59DDE98829F9B2C600849E6F /* Assets.xcassets */,
-				5946B40429FE97A7006AA9BE /* starwars.png */,
 				59DDE98D29F9B2C600849E6F /* Info.plist */,
 			);
 			path = PodcastsFeed;
@@ -757,7 +753,6 @@
 			files = (
 				59DDE98C29F9B2C600849E6F /* LaunchScreen.storyboard in Resources */,
 				598441B029FBCB1F00BB4C4D /* Main.storyboard in Resources */,
-				5946B40629FE9915006AA9BE /* starwars.png in Resources */,
 				5934236E29FA4FE80048CAED /* Podcast.storyboard in Resources */,
 				59DDE98929F9B2C600849E6F /* Assets.xcassets in Resources */,
 				59CA223929F9B94200CA6CEE /* README.md in Resources */,
@@ -783,7 +778,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5946B40529FE97A7006AA9BE /* starwars.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

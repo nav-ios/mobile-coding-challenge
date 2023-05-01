@@ -16,5 +16,4 @@ public enum PodcastClientResult{
 
 public protocol PodcastClient{
     func getPodcasts(completion: @escaping (PodcastClientResult) -> Void)
-
 }

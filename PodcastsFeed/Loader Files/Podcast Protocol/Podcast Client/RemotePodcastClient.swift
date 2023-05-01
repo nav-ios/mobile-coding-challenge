@@ -16,8 +16,7 @@ public class RemotePodcastClient: PodcastClient{
         var parameters: [String: String] = [:]
         parameters["q"] = "star wars"
         parameters["offset"] = String(Pagination.offSet)
-    
-
+        
         client.search(parameters: parameters) { response in
             if let error = response.error {
                 switch (error) {
@@ -28,12 +27,12 @@ public class RemotePodcastClient: PodcastClient{
                 default:
                     print("unknown error")
                 }
-            } else {
+            }
+            else{
                 if let data = response.toJson() {
                     Pagination.offSet = data["next_offset"].intValue
                     completion(.success(data))
                 }
-                
             }
         }
     }

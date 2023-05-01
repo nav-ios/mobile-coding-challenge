@@ -39,7 +39,6 @@ class PodcastDetailViewController: UIViewController {
                 self?.imagePodcast.image = UIImage(systemName: "questionmark.app.fill")
             }
         }
-        // Do any additional setup after loading the view.
     }
     
     private func setupViewObjects(){

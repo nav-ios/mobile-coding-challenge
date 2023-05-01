@@ -21,13 +21,13 @@ class UserDefaultsCacheStore: CacheStore{
         if UserDefaults.standard.bool(forKey: id) == true{
             UserDefaults.standard.set(false, forKey: id)
             completion(.success(false))
-                 }
+        }
         else{
             UserDefaults.standard.set(true, forKey: id)
             completion(.success(true))
         }
     }
-    }
-    
-    
+}
+
+
 
