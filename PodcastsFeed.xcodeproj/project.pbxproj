@@ -272,12 +272,12 @@
 			path = Collaborator;
 			sourceTree = "<group>";
 		};
-		5934236929FA4EA10048CAED /* Composers */ = {
+		5934236929FA4EA10048CAED /* Composer */ = {
 			isa = PBXGroup;
 			children = (
 				5934236A29FA4EC10048CAED /* PodcastListsComposer.swift */,
 			);
-			path = Composers;
+			path = Composer;
 			sourceTree = "<group>";
 		};
 		5934236C29FA4FD90048CAED /* Storyboard */ = {
@@ -353,7 +353,7 @@
 			isa = PBXGroup;
 			children = (
 				59DD1A1629FBC81500510298 /* Pagination */,
-				5934236929FA4EA10048CAED /* Composers */,
+				5934236929FA4EA10048CAED /* Composer */,
 				59DD1A0A29FB96F900510298 /* Cell */,
 				59DDE98329F9B2C600849E6F /* PodcastsListViewController.swift */,
 				5934236529FA46040048CAED /* PodcastLoaderViewController.swift */,
