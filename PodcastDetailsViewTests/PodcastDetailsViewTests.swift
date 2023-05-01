@@ -14,7 +14,7 @@ final class PodcastDetailsViewTests: XCTestCase {
         let podcast = makePodcast(title: "Some Podcast", description: "Some description", isFavourite: false)
         let (sut, loader, _) = makeSUT(with: podcast)
         sut.loadViewIfNeeded()
-        XCTAssertEqual(sut.isFavourite, false)
+        XCTAssertEqual(sut.isPodcastFavourite, false)
         
     }
     
@@ -23,7 +23,7 @@ final class PodcastDetailsViewTests: XCTestCase {
         let podcast = makePodcast(title: "Some Podcast", description: "Some description", isFavourite: false)
         let (sut, loader, _) = makeSUT(with: podcast)
         sut.loadViewIfNeeded()
-        XCTAssertEqual(sut.isFavourite, false)
+        XCTAssertEqual(sut.isPodcastFavourite, false)
         XCTAssertEqual(sut.titlePodcast, podcast.title)
         XCTAssertEqual(sut.descriptionPodcast, podcast.description)
 
@@ -67,11 +67,29 @@ final class PodcastDetailsViewTests: XCTestCase {
         sut.loadViewIfNeeded()
         let exp = expectation(description: "wait for completion")
         DispatchQueue.main.async {
-            XCTAssertEqual(sut.isFavourite, false)
+            XCTAssertEqual(sut.isPodcastFavourite, false)
             exp.fulfill()
         }
         wait(for: [exp], timeout: 1)
         cache.completeCheckForFavouriteWith(result: .success(false))
+    }
+    
+    
+    func test_viewDidLoad_showsFavouritedTitleOnButtonAfterAPodcastIsAddedToFavourite(){
+        let podcast = makePodcast(title: "Star wars", description: "Star wars podcast", isFavourite: false)
+        let (sut, _, cache) = makeSUT(with: podcast)
+        sut.loadViewIfNeeded()
+        let exp = expectation(description: "wait for completion")
+               
+        sut.buttonFavourite.sendActions(for: .touchUpInside)
+        DispatchQueue.main.async {
+            XCTAssertEqual(sut.isPodcastFavourite, true)
+            XCTAssertEqual(sut.buttonFavourite.currentTitle, "Favourited")
+            exp.fulfill()
+        }
+        cache.completefavouriteActionWith(result: .success(true))
+
+        wait(for: [exp], timeout: 1)
     }
     
     
@@ -144,7 +162,7 @@ final class PodcastDetailsViewTests: XCTestCase {
 }
 
 private extension PodcastDetailViewController{
-    var isFavourite: Bool?{
+    var isPodcastFavourite: Bool?{
         return buttonFavourite.currentTitle == "Favourited"
     }
     
