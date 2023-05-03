@@ -95,6 +95,38 @@ final class UserDefaultsCacheStoreTests: XCTestCase {
     }
     
     
+    func test_checkForFavourite_returnsFalseAfterAPodcastIsFavouritedButUserDefaultsWipedOut(){
+        let sut = UserDefaultsCacheStore()
+        let podcastID = makePodcastID()
+        sut.checkForFavourite(podcastID) { result in
+            switch result{
+            case let .success(isFav):
+                XCTAssertFalse(isFav)
+            case .failure:
+                XCTFail("Expected success with false but got failure")
+            }
+        }
+        
+        sut.favouriteAction(podcastID) { result in
+            switch result{
+            case let .success(isFav):
+                XCTAssertTrue(isFav)
+            case .failure:
+                XCTFail("Expected success with true but got failure")
+            }
+        }
+        
+        UserDefaultsCacheStore.resetDefaults()
+        
+        sut.checkForFavourite(podcastID) { result in
+            switch result{
+            case let .success(isFav):
+                XCTAssertFalse(isFav)
+            case .failure:
+                XCTFail("Expected success with false but got failure")
+            }
+        }
+    }
     
     private func makePodcastID() -> String{
         return UUID().uuidString
