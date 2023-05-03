@@ -29,5 +29,10 @@ class UserDefaultsCacheStore: CacheStore{
     }
 }
 
-
-
+extension UserDefaultsCacheStore {
+    static func resetDefaults() {
+        if let bundleID = Bundle(identifier: "com.heyhub.PodcastsFeed")?.bundleIdentifier {
+            UserDefaults.standard.removePersistentDomain(forName: bundleID)
+        }
+    }
+}
