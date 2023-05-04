@@ -6,12 +6,11 @@
 //
 
 import Foundation
-enum CacheStoreResult{
-    case success(Bool)
-    case failure
-}
+  
 
 protocol CacheStore{
-    func checkForFavourite(_ id: String, completion: @escaping (CacheStoreResult) -> Void)
-    func favouriteAction(_ id: String, completion: @escaping (CacheStoreResult) -> Void)
+    typealias Result = Swift.Result<Bool, Error>
+
+    func checkForFavourite(_ id: String, completion: @escaping (Result) -> Void)
+    func favouriteAction(_ id: String, completion: @escaping (Result) -> Void)
 }

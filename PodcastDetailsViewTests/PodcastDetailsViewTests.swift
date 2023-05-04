@@ -126,21 +126,21 @@ final class PodcastDetailsViewTests: XCTestCase {
     }
     
     private class CacheStoreSpy: CacheStore{
-        var arrayCompletion = [(PodcastsFeed.CacheStoreResult) -> Void]()
-        func checkForFavourite(_ id: String, completion: @escaping (PodcastsFeed.CacheStoreResult) -> Void) {
+        var arrayCompletion = [(PodcastsFeed.CacheStore.Result) -> Void]()
+        func checkForFavourite(_ id: String, completion: @escaping (PodcastsFeed.CacheStore.Result) -> Void) {
             arrayCompletion.append(completion)
         }
         
-        func favouriteAction(_ id: String, completion: @escaping (PodcastsFeed.CacheStoreResult) -> Void) {
+        func favouriteAction(_ id: String, completion: @escaping (PodcastsFeed.CacheStore.Result) -> Void) {
             arrayCompletion.append(completion)
 
         }
         
-        func completeCheckForFavouriteWith(result: PodcastsFeed.CacheStoreResult, at index: Int = 0){
+        func completeCheckForFavouriteWith(result: PodcastsFeed.CacheStore.Result, at index: Int = 0){
             arrayCompletion[index](result)
         }
         
-        func completefavouriteActionWith(result: PodcastsFeed.CacheStoreResult, at index: Int = 0){
+        func completefavouriteActionWith(result: PodcastsFeed.CacheStore.Result, at index: Int = 0){
             arrayCompletion[index](result)
         }
         

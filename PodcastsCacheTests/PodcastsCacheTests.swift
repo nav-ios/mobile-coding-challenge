@@ -152,20 +152,20 @@ final class PodcastCacheTests: XCTestCase {
         case favouriteAction
     }
     class CacheStoreSpy: CacheStore{
-        var arrayCompletionCheckForFavourite = [(CacheStoreResult) -> Void]()
-        var arrayCompletionFavouriteAction = [(CacheStoreResult) -> Void]()
+        var arrayCompletionCheckForFavourite = [(CacheStore.Result) -> Void]()
+        var arrayCompletionFavouriteAction = [(CacheStore.Result) -> Void]()
         var recievedCallCount = 0
         var receivedMessages = [CacheStoreMessages]()
         
        
-        func checkForFavourite(_ id: String, completion: @escaping (CacheStoreResult) -> Void)
+        func checkForFavourite(_ id: String, completion: @escaping (CacheStore.Result) -> Void)
         {
             recievedCallCount += 1
             receivedMessages.append(.checkForFavourite)
             arrayCompletionCheckForFavourite.append(completion)
         }
         
-        func favouriteAction(_ id: String, completion: @escaping (CacheStoreResult) -> Void)
+        func favouriteAction(_ id: String, completion: @escaping (CacheStore.Result) -> Void)
         {
             arrayCompletionFavouriteAction.append(completion)
             receivedMessages.append(.favouriteAction)

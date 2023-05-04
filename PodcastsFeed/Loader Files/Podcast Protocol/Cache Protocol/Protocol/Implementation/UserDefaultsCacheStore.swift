@@ -8,7 +8,7 @@
 import Foundation
 class UserDefaultsCacheStore: CacheStore{
     
-    func checkForFavourite(_ id: String, completion: @escaping (CacheStoreResult) -> Void) {
+    func checkForFavourite(_ id: String, completion: @escaping (CacheStore.Result) -> Void) {
         if UserDefaults.standard.bool(forKey: id) == true{
             completion(.success(true))
         }else{
@@ -16,7 +16,7 @@ class UserDefaultsCacheStore: CacheStore{
         }
     }
     
-    func favouriteAction(_ id: String, completion: @escaping (CacheStoreResult) -> Void) {
+    func favouriteAction(_ id: String, completion: @escaping (CacheStore.Result) -> Void) {
         
         if UserDefaults.standard.bool(forKey: id) == true{
             UserDefaults.standard.set(false, forKey: id)
