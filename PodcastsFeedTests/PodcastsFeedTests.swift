@@ -111,7 +111,7 @@ final class PodcastFeedTests: XCTestCase {
     
     class PodcastClientSpy: PodcastClient{
         
-        typealias Result = PodcastClientResult
+        typealias Result = PodcastClient.Result
         var getPodcastCallCount = 0
         var arrayCompletions = [(Result) -> Void]()
 

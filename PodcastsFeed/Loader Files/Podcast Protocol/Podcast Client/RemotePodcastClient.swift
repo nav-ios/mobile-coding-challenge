@@ -10,7 +10,7 @@ import PodcastAPI
 
 public class RemotePodcastClient: PodcastClient{
     
-    public func getPodcasts(completion: @escaping (PodcastClientResult) -> Void) {
+    public func getPodcasts(completion: @escaping (PodcastClient.Result) -> Void) {
         let apiKey = ""
         let client = PodcastAPI.Client(apiKey: apiKey)
         var parameters: [String: String] = [:]
