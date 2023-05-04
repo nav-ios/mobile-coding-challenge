@@ -12,7 +12,7 @@ final class PodcastDetailsViewTests: XCTestCase {
     
     func test_viewDidLoad_doesnotDisplayFavouritedTitleOnButton(){
         let podcast = makePodcast(title: "Some Podcast", description: "Some description", isFavourite: false)
-        let (sut, loader, _) = makeSUT(with: podcast)
+        let (sut, _, _) = makeSUT(with: podcast)
         sut.loadViewIfNeeded()
         XCTAssertEqual(sut.isPodcastFavourite, false)
         
@@ -21,7 +21,7 @@ final class PodcastDetailsViewTests: XCTestCase {
     
     func test_viewDidLoad_checksValuesOnLabel(){
         let podcast = makePodcast(title: "Some Podcast", description: "Some description", isFavourite: false)
-        let (sut, loader, _) = makeSUT(with: podcast)
+        let (sut, _, _) = makeSUT(with: podcast)
         sut.loadViewIfNeeded()
         XCTAssertEqual(sut.isPodcastFavourite, false)
         XCTAssertEqual(sut.titlePodcast, podcast.title)
