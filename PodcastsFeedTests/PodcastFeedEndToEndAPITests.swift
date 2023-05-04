@@ -20,7 +20,7 @@ final class PodcastFeedEndToEndAPITests: XCTestCase {
             switch result{
             case let .success(arrayPodcast):
                 XCTAssertFalse(arrayPodcast.isEmpty)
-                XCTAssertEqual(arrayPodcast.count, 10)
+                XCTAssertEqual(arrayPodcast.count, 10, "Expected to load 10 podcasts")
                 XCTAssertFalse(arrayPodcast[0].title.isEmpty, "Expected non empty title")
                 XCTAssertFalse(arrayPodcast[0].publisher.isEmpty, "Expected non empty publisher")
                 XCTAssertFalse(arrayPodcast[1].title.isEmpty, "Expected non empty second title")
