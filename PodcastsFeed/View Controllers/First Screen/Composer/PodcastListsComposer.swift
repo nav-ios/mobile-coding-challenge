@@ -8,7 +8,9 @@
 import Foundation
 import UIKit
 public class PodcastListsComposer{
-    
+    /// Use to create an instance of PodcastsListViewController with all the dependencies that it needs.
+    /// It returns PodcastsListViewController wrapped in a UINavigationController at its root.
+    /// You can access the root view controller of this UINavigationController if you need to acess the PodcastsListViewController instance directly
     static func composeWith(podcastLoader: PodcastLoader, imageLoader: ImageLoader) -> UINavigationController{
        let podcastLoader = PodcastLoaderViewController(podcastLoader: podcastLoader)
         let bundle = Bundle(identifier: "com.heyhub.PodcastsFeed")
