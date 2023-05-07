@@ -12,10 +12,8 @@ class PodcastsListViewController: UITableViewController{
     private var imageLoader = URLSessionImageLoader()
     var arrayTable = [PodcastCellController](){
         didSet{
-            DispatchQueue.main.async {
                 self.tableView.reloadData()
                 self.tableView.tableFooterView = self.loadMoreView()
-            }
         }
     }
     
@@ -34,6 +32,7 @@ class PodcastsListViewController: UITableViewController{
         return arrayTable.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         return cellController(forRowAt: indexPath).view(in: tableView)
     }
     

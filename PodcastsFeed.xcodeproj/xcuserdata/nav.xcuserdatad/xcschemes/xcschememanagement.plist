@@ -29,6 +29,11 @@
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
+		<key>PodcastsListViewControllerTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>11</integer>
+		</dict>
 		<key>UserDefaultsCacheStoreTests.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
